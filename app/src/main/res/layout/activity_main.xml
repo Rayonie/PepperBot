@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00BCD4"
@@ -13,23 +14,62 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/Coursebtn"
-            android:layout_width="283dp"
-            android:layout_height="173dp"
-            android:layout_marginRight="120dp"
-            android:backgroundTint="#4CAF50"
-            android:padding="16dp"
-            android:paddingRight="16dp"
-            android:text="Our Course" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/Careerbtn"
-            android:layout_width="283dp"
-            android:layout_height="173dp"
-            android:layout_marginLeft="120dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Future Career" />
+            <ImageButton
+                android:id="@+id/Coursebtn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginRight="100dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="Our Course"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:scaleType="fitXY"
+                android:text="Our Course"
+                app:srcCompat="@drawable/planning" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Our Course" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/Careerbtn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="100dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="Future Career"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/fehe1" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_weight="1"
+                android:text="Future Career" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -38,21 +78,61 @@
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/Internbtn"
-            android:layout_width="283dp"
-            android:layout_height="173dp"
-            android:layout_marginRight="120dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Internship" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/Gamebtn"
-            android:layout_width="283dp"
-            android:layout_height="173dp"
-            android:layout_marginLeft="120dp"
-            android:backgroundTint="#4CAF50"
-            android:text="Game" />
+            <ImageButton
+                android:id="@+id/Internbtn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginRight="100dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="Internship"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/importance_of_internship" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Internship Opportunities" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/Gamebtn"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="100dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:contentDescription="Game"
+                android:maxWidth="100dp"
+                android:maxHeight="100dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/_754404" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_weight="1"
+                android:text="Game" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

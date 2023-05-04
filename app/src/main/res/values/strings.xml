@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My 4th Robot Application</string>
+    <string name="app_name">Pepper Bot Open House Application</string>
     <string name="title_activity_course">CourseActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

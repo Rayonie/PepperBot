@@ -16,10 +16,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends RobotActivity implements RobotLifecycleCallbacks {
 
-    Button Coursebtn,Careerbtn, Gamebtn , Internbtn;
+
+    ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
