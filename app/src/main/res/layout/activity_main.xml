@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00BCD4"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -15,30 +17,41 @@
             android:id="@+id/Coursebtn"
             android:layout_width="283dp"
             android:layout_height="173dp"
+            android:layout_marginRight="120dp"
+            android:backgroundTint="#4CAF50"
+            android:padding="16dp"
+            android:paddingRight="16dp"
             android:text="Our Course" />
 
         <Button
             android:id="@+id/Careerbtn"
             android:layout_width="283dp"
             android:layout_height="173dp"
+            android:layout_marginLeft="120dp"
+            android:backgroundTint="#4CAF50"
             android:text="Future Career" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/Internbtn"
             android:layout_width="283dp"
             android:layout_height="173dp"
+            android:layout_marginRight="120dp"
+            android:backgroundTint="#4CAF50"
             android:text="Internship" />
 
         <Button
             android:id="@+id/Gamebtn"
             android:layout_width="283dp"
             android:layout_height="173dp"
+            android:layout_marginLeft="120dp"
+            android:backgroundTint="#4CAF50"
             android:text="Game" />
     </LinearLayout>
 
