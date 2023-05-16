@@ -22,5 +22,14 @@
     <string name="summary2"> - VR apps for head-mounted devices (Escape room)</string>
     <string name="summary3"> - Software Testing and Analytic</string>
     <string name="summary4"> - IT Security and Management</string>
+    <string name="school_provide">School Providing Internship</string>
+    <string name="IPS">Intership Placement System(IPS)</string>
+    <string name="self_sourcing">Self Sourcing</string>
+    <string name="IT">Must be IT job with diploma relevance</string>
+    <string name="offer">Submit complete details of intership position with offer letter from the company</string>
+    <string name="overseas_intership">Overseas Intership</string>
+    <string name="eligibility">Eligibility</string>
+    <string name="pr">Singapore Citizen or Singapore Permanent Resident</string>
+    <string name="gpa">GPA of at least 2.5</string>
 
 </resources>
