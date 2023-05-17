@@ -16,9 +16,9 @@
     <string name="career3">UI Designer</string>
     <string name="career4">UX Designer</string>
 
-    <string name="Our_Course">Summary of Diploma in Digital Design and Development (DDDD)</string>
+    <string name="Our_Course">Diploma in Digital Design and Development(DDDD)</string>
     <string name="header">Things taught in the course</string>
-    <string name="summary"> - Design and build immersive experiences with voice commands for smart assistants(Google Home, Amazon Echo)</string>
+    <string name="summary"> - Build immersive experiences with voice commands for smart assistants(Google Home, Amazon Echo)</string>
     <string name="summary2"> - VR apps for head-mounted devices (Escape room)</string>
     <string name="summary3"> - Software Testing and Analytic</string>
     <string name="summary4"> - IT Security and Management</string>
