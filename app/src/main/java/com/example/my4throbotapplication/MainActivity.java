@@ -21,6 +21,7 @@ import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
 import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.conversation.Topic;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -33,8 +34,10 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
 
 
     ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn;
+    Button Askbtn;
     private Chat chat;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,16 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         Careerbtn =findViewById(R.id.Careerbtn);
         Gamebtn =findViewById(R.id.Gamebtn);
         Internbtn =findViewById(R.id.Internbtn);
+        Askbtn = findViewById(R.id.Askbtn);
+
+        Askbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,
+                        AskMeActivity.class);
+                startActivity(i);
+            }
+        });
 
         Coursebtn.setOnClickListener(new View.OnClickListener() {
             @Override

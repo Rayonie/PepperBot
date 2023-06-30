@@ -2,44 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundcolor_career"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="16dp">
 
-
-    <TextView
-        android:id="@+id/title_career"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/title_career"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/career1"
+    <VideoView
+        android:id="@+id/careervideo1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/career1"
-        android:textSize="34sp" />
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"/>
 
-    <TextView
-        android:id="@+id/career2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/career2"
-        android:textSize="34sp" />
-
-    <TextView
-        android:id="@+id/career3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/career3"
-        android:textSize="34sp" />
-
-    <TextView
-        android:id="@+id/career4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/career4"
-        android:textSize="34sp" />
 </LinearLayout>
