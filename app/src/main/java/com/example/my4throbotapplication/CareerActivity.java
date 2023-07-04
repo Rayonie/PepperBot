@@ -16,9 +16,9 @@ public class CareerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_career);
 
-        career_vv1 = (VideoView) findViewById(R.id.careervideo1);
+        career_vv1 = findViewById(R.id.careervideo1);
 
-        String path = "android.resource://"+getPackageName()+"/"+R.raw.career_vid;
+        String path = "android.resource://"+getPackageName()+"/"+R.raw.careervid;
         Uri u = Uri.parse(path);
         career_vv1.setVideoURI(u);
         career_vv1.start();
@@ -26,9 +26,14 @@ public class CareerActivity extends AppCompatActivity {
         career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setLooping(true);
+                mediaPlayer.setLooping(false);
             }
         });
+    }
+    @Override
+    protected void onPostResume() {
+        career_vv1.resume();
+        super.onPostResume();
     }
 
     @Override
