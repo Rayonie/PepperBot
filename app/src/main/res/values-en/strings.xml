@@ -33,20 +33,21 @@
     <string name="pr">Singapore Citizen or Singapore Permanent Resident</string>
     <string name="gpa">GPA of at least 2.5</string>
 
-    <string name="main_self_sourcing">个人申请</string>
-    <string name="main_rp_working_source">RP工作源</string>
-    <string name="main_overseas">海外实习</string>
+    <string name="main_self_sourcing">Self Sourcing</string>
+    <string name="main_rp_working_source">RP Working Source</string>
+    <string name="main_overseas">Overseas</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="here_are_some_example_for_internshi_with_rp">这里有一些实习的例子吗？带RP</string>
-    <string name="click_for_more_information">单击以获取更多信息</string>
-    <string name="menu2_1">• 必须是一份与文凭相关的IT工作</string>
-    <string name="menu2_2">• 必须与IT专业人员一起工作</string>
-    <string name="menu2_3">• 必须为2023年9月18日至2024年2月4日的20周</string>
-    <string name="menu3">资格:</string>
-    <string name="menu3_1">• 新加坡公民或新加坡永久居民</string>
-    <string name="menu3_2">• GPA至少为2.5</string>
-    <string name="menu3_3">• 国家:</string>
-    <string name="menu3_4">• 指定3个选项（表示3个不同的国家/地区）</string>
-    <string name="menu3_5">• 日本（高GPA至少3.0或以上，GPA至少3.5为佳，仅限新加坡公民）、中国、越南、泰国和印度尼西亚。</string>
+    <string name="here_are_some_example_for_internshi_with_rp">Here are some example for internshi?with RP</string>
+    <string name="click_for_more_information">click for more information</string>
+    <string name="menu2_1">• Must be an IT job with diploma relevance</string>
+    <string name="menu2_2">• Must work alongside an IT Professional</string>
+    <string name="menu2_3">• Must be 20 weeks from 18 Sep 2023 to 4 Feb 2024</string>
+    <string name="menu3">Eligibility:</string>
+    <string name="menu3_1">• Singapore Citizen or Singapore Permanent Resident</string>
+    <string name="menu3_2">• GPA of at least 2.5 to be considered</string>
+    <string name="menu3_3">• Countries:</string>
+    <string name="menu3_4">• Specify 3 choices (indicate 3 different countries)</string>
+    <string name="menu3_5">• Japan (High GPA of at least 3.0 or more, GPA of at least 3.5 is preferred, Singapore Citizens only), China, Vietnam, Thailand and Indonesia.</string>
+
 </resources>

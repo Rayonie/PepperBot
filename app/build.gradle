@@ -50,4 +50,7 @@ dependencies {
 
     //Rounded image view
     implementation 'com.makeramen:roundedimageview:2.3.0'
+    //阴影等shape属性
+    implementation 'com.github.getActivity:ShapeView:8.5'
+
 }

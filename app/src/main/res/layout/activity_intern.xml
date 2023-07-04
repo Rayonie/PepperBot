@@ -1,82 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".InternActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/ic_bg">
+
+    <ImageView
+        android:id="@+id/iv_meteor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_meteor"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_meteor2"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/iv_star1"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/ic_star1"
+        android:layout_marginStart="-120dp"
+        android:layout_marginTop="-120dp" />
+
+    <ImageView
+        android:id="@+id/iv_star2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_star2"
+        android:layout_marginEnd="-90dp"
+        android:layout_marginTop="80dp"
+        android:layout_alignParentEnd="true"/>
+
+
+
+    <ImageView
+        android:id="@+id/iv_star4"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_star4"
+        android:layout_marginStart="260dp"
+        android:layout_marginBottom="-80dp"
+        android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/iv_star5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_star5"
+        android:layout_marginStart="240dp"
+        android:layout_marginBottom="110dp"
+        android:layout_alignParentBottom="true"/>
+
+
+    <ImageView
+        android:id="@+id/iv_rocket"
+        android:layout_width="913dp"
+        android:layout_height="560dp"
+        android:src="@drawable/ic_rocket"
+        android:layout_marginBottom="-80dp"
+        android:paddingTop="100dp"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="-110dp"/>
+
+    <ImageView
+        android:id="@+id/iv_ufo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_ufo" />
+
+    <ImageView
+        android:id="@+id/iv_star3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_star3"
+        android:layout_marginEnd="130dp"
+        android:layout_marginTop="90dp"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
-        android:id="@+id/s1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/school_provide"
-        android:textSize="48sp" />
+        android:textColor="@color/white"
+        android:text="En/中"
+        android:layout_marginEnd="135dp"
+        android:layout_marginTop="105dp"
+        android:layout_alignParentEnd="true"
+        android:textSize="16dp"/>
 
-    <TextView
-        android:id="@+id/s1.1"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/IPS"
-        android:textSize="34sp" />
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
 
-    <TextView
-        android:id="@+id/s2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/self_sourcing"
-        android:textSize="48sp" />
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/tv_menu1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:shape_radius="100dp"
+            app:shape_solidColor="#E0E6C6FA"
+            android:textColor="@color/white"
+            android:text="@string/main_self_sourcing"
+            android:gravity="center"
+            android:textSize="18dp"
+            app:shape_solidPressedColor="#80bebebe"/>
 
-    <TextView
-        android:id="@+id/s2.1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/IT"
-        android:textSize="34sp" />
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/tv_menu2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:shape_radius="100dp"
+            app:shape_solidColor="#E0E6C6FA"
+            app:shape_solidPressedColor="#80bebebe"
+            android:textColor="@color/white"
+            android:text="@string/main_rp_working_source"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:layout_marginTop="16dp"/>
+        <com.hjq.shape.view.ShapeTextView
+            android:id="@+id/tv_menu3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:shape_radius="100dp"
+            app:shape_solidColor="#E0E6C6FA"
+            app:shape_solidPressedColor="#80bebebe"
+            android:textColor="@color/white"
+            android:text="@string/main_overseas"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/s2.2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/offer"
-        android:textSize="34sp" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/s3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/overseas_intership"
-        android:textSize="48sp" />
-
-    <TextView
-        android:id="@+id/s3.1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/eligibility"
-        android:textSize="34sp" />
-
-    <TextView
-        android:id="@+id/s3.2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/pr"
-        android:textSize="34sp" />
-
-    <TextView
-        android:id="@+id/s3.3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:text="@string/gpa"
-        android:textSize="34sp"/>
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuDetailsActivity"
+    android:background="@drawable/ic_bg">
+
+
+
+    <ImageView
+        android:id="@+id/iv_star1"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:src="@drawable/ic_star1"
+        android:layout_marginStart="-60dp"
+        android:layout_marginTop="-60dp" />
+
+    <ImageView
+        android:id="@+id/iv_star2"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_star2"
+        android:layout_marginEnd="-60dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentEnd="true"/>
+
+
+    <ImageView
+        android:id="@+id/iv_star4"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_star4"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="-80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"/>
+
+    <ImageView
+        android:id="@+id/iv_star5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_star5"
+        android:layout_marginStart="240dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_alignParentBottom="true"/>
+
+    <com.hjq.shape.view.ShapeImageView
+        android:id="@+id/iv_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/ic_back"
+        app:shape_solidColor="#80bebebe"
+        app:shape_radius="100dp"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        app:shape_solidPressedColor="#80eeeeee"/>
+
+
+
+    <com.hjq.shape.layout.ShapeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        app:shape_radius="50dp"
+        app:shape_solidColor="#A0ffffff"
+        android:padding="20dp">
+
+        <FrameLayout
+            android:id="@+id/fl_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.hjq.shape.layout.ShapeLinearLayout>
+</RelativeLayout>

@@ -16,6 +16,7 @@ dependencyResolutionManagement {
             url 'http://android.aldebaran.com/sdk/maven'
             allowInsecureProtocol = true
         }
+        maven { url "https://jitpack.io" }
         google()
         mavenCentral()
     }
