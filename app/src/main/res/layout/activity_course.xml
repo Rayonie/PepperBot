@@ -4,15 +4,15 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mint_green"
     android:padding="16dp"
     tools:context=".CourseActivity">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        tools:ignore="MissingConstraints"
-        android:layout_margin="9dp"/>
+        android:layout_height="230dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginStart="9dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
