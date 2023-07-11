@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageViewbg4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:scaleX="1.5"
+            app:srcCompat="@drawable/c_redbg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/planet4"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/c_ux_designer_blueplanet" />
+
+                <TextView
+                    android:id="@+id/tvux"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/quantico_bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="UX Designer"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="1400dp"
+                android:layout_height="400dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/planet1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleX="0.85"
+                    android:scaleY="0.9"
+                    app:srcCompat="@drawable/c_developer_orangeplanet" />
+
+                <TextView
+                    android:id="@+id/tvdevelper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/quantico_bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="Mobile and Web Developer"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="48sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/planet2"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/c_system_analyst_pinkplanet" />
+
+                <TextView
+                    android:id="@+id/tvanalyst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/quantico_bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="System Analyst"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="301dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/planet3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scaleX="1.25"
+                    android:scaleY="1.25"
+                    app:srcCompat="@drawable/c_ui_designer_greenplanet" />
+
+                <TextView
+                    android:id="@+id/tvui"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/quantico_bold"
+                    android:shadowColor="#000000"
+                    android:shadowDx="5"
+                    android:shadowDy="5"
+                    android:shadowRadius="5"
+                    android:text="UI Designer"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/imageViewland4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleX="1.05"
+                android:translationY="120dp"
+                app:srcCompat="@drawable/c_orangeland" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

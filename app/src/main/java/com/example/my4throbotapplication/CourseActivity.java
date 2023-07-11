@@ -3,37 +3,20 @@ package com.example.my4throbotapplication;
 import android.os.Bundle;
 
 //import com.aldebaran.qi.sdk;
-import com.aldebaran.qi.sdk.QiSDK;
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
-import com.aldebaran.qi.sdk.builder.AnimateBuilder;
-import com.aldebaran.qi.sdk.builder.AnimationBuilder;
 import com.aldebaran.qi.sdk.design.activity.RobotActivity;
-import com.aldebaran.qi.sdk.builder.SayBuilder;
-import com.aldebaran.qi.sdk.object.actuation.Animate;
-import com.aldebaran.qi.sdk.object.actuation.Animation;
-import com.aldebaran.qi.sdk.object.conversation.Say;
-import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
-import com.aldebaran.qi.sdk.design.activity.RobotActivity;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
-
-import com.example.my4throbotapplication.databinding.ActivityCourseBinding;
 
 import java.util.ArrayList;
 import java.util.List;

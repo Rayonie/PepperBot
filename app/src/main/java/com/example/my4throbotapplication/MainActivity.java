@@ -73,7 +73,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this,
-                        CareerActivity.class);
+                        CareerActivityUIDesigner.class);
                 startActivity(i);
             }
         });
