@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
+import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
 import com.aldebaran.qi.sdk.builder.AnimateBuilder;
 import com.aldebaran.qi.sdk.builder.AnimationBuilder;
 import com.aldebaran.qi.sdk.builder.SayBuilder;
@@ -19,7 +20,7 @@ import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.conversation.Say;
 
-public class CareerActivityUXDesigner extends CareerActivityUIDesigner {
+public class CareerActivityUXDesigner extends CareerActivityUIDesigner implements RobotLifecycleCallbacks {
 
     ImageView career_ui, career_ux, career_develop, career_analyst;
 
@@ -27,11 +28,13 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_career_uxdesigner);
+        QiSDK.register(this, this);
+
         career_ui = findViewById(R.id.planet3);
         career_ux = findViewById(R.id.planet4);
         career_develop = findViewById(R.id.planet1);
         career_analyst = findViewById(R.id.planet2);
-        QiSDK.register(this, this);
+
 
 
         career_ui.setOnClickListener(new View.OnClickListener() {
