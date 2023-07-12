@@ -109,21 +109,21 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     public void onRobotFocusGained(QiContext qiContext) {
         // The robot focus is gained.
         // Create a new say action.
-        //Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-        //        .withText("Hello human! how are you?") // Set the text to say.
-        //        .build(); // Build the say action.// Create a new say action.
+        Say say = SayBuilder.with(qiContext) // Create the builder with the context.
+                .withText("Hello human! how are you?") // Set the text to say.
+                .build(); // Build the say action.// Create a new say action.
 
         // Create the second action.
         // Create an animation object.
-        //Animation myAnimation = AnimationBuilder.with(qiContext)
-        //        .withResources(R.raw.elephant_a001)
-        //        .build();
+        Animation myAnimation = AnimationBuilder.with(qiContext)
+                .withResources(R.raw.elephant_a001)
+                .build();
         //Animate animate = AnimateBuilder.with(qiContext)
         //        .withAnimation(myAnimation)
         //        .build();
 
         // Execute the action.
-        //say.run();
+        say.run();
         //animate.run();
 
         //Topic topic = TopicBuilder.with(qiContext)
