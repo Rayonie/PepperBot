@@ -3,12 +3,12 @@ package com.example.my4throbotapplication;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import java.util.List;
 
@@ -31,19 +31,15 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHol
                         parent,
                         false
                 )
-
         );
     }
 
     @Override
     public void onBindViewHolder(@NonNull SlideViewHolder holder, int position) {
-
         holder.setImage(slideItems.get(position));
         if(position == slideItems.size() -2){
-
             viewPager2.post(runnable);
         }
-
     }
 
     @Override
@@ -52,7 +48,7 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHol
     }
 
     class SlideViewHolder extends RecyclerView.ViewHolder{
-        private ImageView imageView;
+        private RoundedImageView imageView;
 
         SlideViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,7 +63,6 @@ public class SlideAdapter extends RecyclerView.Adapter<SlideAdapter.SlideViewHol
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-
             slideItems.addAll(slideItems);
             notifyDataSetChanged();
         }

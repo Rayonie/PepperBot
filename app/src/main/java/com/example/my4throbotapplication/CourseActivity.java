@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -21,9 +22,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CourseActivity extends RobotActivity implements RobotLifecycleCallbacks {
+public class CourseActivity extends AppCompatActivity {
 
-    Button Log_out;
 
     ViewPager2 viewPager2;
 
@@ -37,14 +37,14 @@ public class CourseActivity extends RobotActivity implements RobotLifecycleCallb
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course);
 
-        viewPager2 = findViewById(R.id.viewPager);
+        viewPager2 = findViewById(R.id.viewPagerImageSlider);
 
         List<SlideItem> slideItem = new ArrayList<>();
         slideItem.add(new SlideItem(R.drawable.slide1));
         slideItem.add(new SlideItem(R.drawable.slide2));
         slideItem.add(new SlideItem(R.drawable.slide3));
 
-        viewPager2.setAdapter(new SlideAdapter(slideItem,viewPager2));
+        viewPager2.setAdapter(new SlideAdapter(slideItem, viewPager2));
 
         viewPager2.setClipToPadding(false);
         viewPager2.setClipChildren(false);
@@ -58,7 +58,7 @@ public class CourseActivity extends RobotActivity implements RobotLifecycleCallb
             public void transformPage(@NonNull View page, float position) {
 
                 float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r*0.15f );
+                page.setScaleY(0.85f + r * 0.15f);
             }
         });
 
@@ -76,6 +76,7 @@ public class CourseActivity extends RobotActivity implements RobotLifecycleCallb
 
 
     }
+
     private Runnable slideRunnable = new Runnable() {
         @Override
         public void run() {
@@ -85,30 +86,15 @@ public class CourseActivity extends RobotActivity implements RobotLifecycleCallb
     };
 
     @Override
-    protected void onPause(){
+    protected void onPause() {
         super.onPause();
         slideHandler.removeCallbacks(slideRunnable);
     }
 
     @Override
-    protected void onResume(){
+    protected void onResume() {
         super.onResume();
         slideHandler.postDelayed(slideRunnable, 4000);
     }
 
-
-    @Override
-    public void onRobotFocusGained(QiContext qiContext) {
-
-    }
-
-    @Override
-    public void onRobotFocusLost() {
-
-    }
-
-    @Override
-    public void onRobotFocusRefused(String reason) {
-
-    }
 }

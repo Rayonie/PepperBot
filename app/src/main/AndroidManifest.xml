@@ -52,8 +52,11 @@
         <activity
             android:name=".CourseActivity"
             android:exported="false"
-            android:label="@string/title_activity_course"
             android:theme="@style/Theme.My4thRobotApplication.NoActionBar" />
+        <activity
+            android:name=".SlideAdapter"
+            android:exported="true"
+            android:theme="@style/Theme.My4thRobotApplication.NoActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
