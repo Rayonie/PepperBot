@@ -34,6 +34,7 @@ public class AskMeActivity extends RobotActivity implements RobotLifecycleCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        QiSDK.register(this, this);
         setContentView(R.layout.activity_ask_me);
 
 
