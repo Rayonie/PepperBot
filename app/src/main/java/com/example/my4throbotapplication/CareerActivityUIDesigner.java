@@ -32,8 +32,6 @@ import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.conversation.Topic;
 
 public class CareerActivityUIDesigner extends AppCompatActivity implements RobotLifecycleCallbacks{
-    private RobotActivity robotActivity;
-
     VideoView career_vv1;
     ImageView career_ui, career_ux, career_develop, career_analyst;
     private Chat chat;
