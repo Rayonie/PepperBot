@@ -42,6 +42,7 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        QiSDK.register(this,this);
         setContentView(R.layout.activity_course);
 
         viewPager2 = findViewById(R.id.viewPagerImageSlider);
