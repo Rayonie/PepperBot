@@ -29,7 +29,8 @@ import android.widget.TextView;
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
 
-public class GameActivity extends AppCompatActivity implements View.OnClickListener {
+
+public class GameActivity extends AppCompatActivity implements View.OnClickListener,RobotLifecycleCallbacks {
 
     boolean playerOneActive;
     private TextView playerOneScore, playerTwoScore, playerStatus;
@@ -40,12 +41,16 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     int[][] winningPositions = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
     int rounds;
 
+    private QiContext qiContext;
+
+    boolean playerwon = false;
     private int playerOneScoreCount, playerTwoScoreCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        QiSDK.register(this,this);
 
         playerOneScore = findViewById(R.id.score_Player1);
         playerTwoScore = findViewById(R.id.score_Player2);
@@ -113,21 +118,27 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 playerOneScoreCount++;
                 updatePlayerScore();
                 playerStatus.setText("Player 1 has won");
+                playerwon = true;
+
             }
             else
             {
                 playerTwoScoreCount++;
                 updatePlayerScore();
                 playerStatus.setText("Player 2 has won");
+                playerwon = true;
+
             }
         }
         else if(rounds == 9)
         {
             playerStatus.setText("No Winner");
+
         }
         else
         {
             playerOneActive = !playerOneActive;
+
         }
 
         reset.setOnClickListener(new View.OnClickListener() {
@@ -137,6 +148,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 playerOneScoreCount = 0;
                 playerTwoScoreCount = 0;
                 updatePlayerScore();
+                playerwon = false;
             }
         });
 
@@ -144,6 +156,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 playAgain();
+                playerwon = false;
             }
         });
 
@@ -158,6 +171,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         for(int[] winningPositions:winningPositions){
             if(gameState[winningPositions[0]] == gameState[winningPositions[1]] && gameState[winningPositions[1]]== gameState[winningPositions[2]] && gameState[winningPositions[0]] != 2 ){
                 winnerResults = true;
+
+
             }
         }
 
@@ -182,6 +197,25 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    @Override
+    public void onRobotFocusGained(QiContext qiContext) {
+
+        Say say = SayBuilder.with(qiContext)
+                .withText("Let's play some tic tac toe! It is going to be fun!")
+                .build();
+        say.run();
 
 
+
+    }
+
+    @Override
+    public void onRobotFocusLost() {
+
+    }
+
+    @Override
+    public void onRobotFocusRefused(String reason) {
+
+    }
 }

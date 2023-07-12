@@ -139,25 +139,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         say.run();
         animate.run();
 
-//        Topic topic = TopicBuilder.with(qiContext)
-//                .withResource(R.raw.chat_about_school)
-//                .build();
 //
-//        QiChatbot qiChatbot = QiChatbotBuilder.with(qiContext)
-//                .withTopic(topic)
-//                .build();
-//
-//        chat = ChatBuilder.with(qiContext)
-//                .withChatbot(qiChatbot)
-//                .build();
-//        chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
-//        Future<Void> chatFuture = chat.async().run();
-//
-//        chatFuture.thenConsume(future -> {
-//            if (future.hasError()) {
-//                Log.e(TAG, "Discussion finished with error.", future.getError());
-//            }
-//        });
     }
 
     @Override
