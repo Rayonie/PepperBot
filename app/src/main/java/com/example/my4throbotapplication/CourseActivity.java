@@ -40,7 +40,6 @@ public class CourseActivity extends RobotActivity implements RobotLifecycleCallb
         viewPager2 = findViewById(R.id.viewPager);
 
         List<SlideItem> slideItem = new ArrayList<>();
-        slideItem.add(new SlideItem(R.drawable.background));
         slideItem.add(new SlideItem(R.drawable.slide1));
         slideItem.add(new SlideItem(R.drawable.slide2));
         slideItem.add(new SlideItem(R.drawable.slide3));
