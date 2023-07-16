@@ -1,152 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@drawable/homebg"
+    android:gravity="center">
 
 
-    <LinearLayout
+    <Button
+        android:id="@+id/Askbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/blue"
+        android:text="Ask Me Anything!"
+        android:visibility="visible"
+        app:iconTint="#FAFAFA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/Internbtn"
+        android:layout_width="179dp"
+        android:layout_height="282dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="136dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/c_developer_orangeplanet"
+        android:contentDescription="Internship"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Careerbtn" />
 
-            <ImageButton
-                android:id="@+id/Coursebtn"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="100dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="Our Course"
-                android:maxWidth="100dp"
-                android:maxHeight="100dp"
-                android:scaleType="fitXY"
-                android:text="Our Course"
-                app:srcCompat="@drawable/planning" />
+    <ImageButton
+        android:id="@+id/Coursebtn"
+        android:layout_width="185dp"
+        android:layout_height="307dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginBottom="112dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/c_system_analyst_pinkplanet"
+        android:contentDescription="Our Course"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitXY"
+        android:text="Our Course"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Our Course" />
-        </LinearLayout>
+    <ImageButton
+        android:id="@+id/Careerbtn"
+        android:layout_width="162dp"
+        android:layout_height="324dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="116dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/c_ux_designer_blueplanet"
+        android:contentDescription="Future Career"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Gamebtn" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/Gamebtn"
+        android:layout_width="168dp"
+        android:layout_height="320dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="120dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/c_ui_designer_greenplanet"
+        android:contentDescription="Game"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitXY"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Coursebtn" />
 
-            <ImageButton
-                android:id="@+id/Careerbtn"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="100dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="Future Career"
-                android:maxWidth="100dp"
-                android:maxHeight="100dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/fehe1" />
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_weight="1"
-                android:text="Future Career" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/Askbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/Internbtn"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginRight="100dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="Internship"
-                android:maxWidth="100dp"
-                android:maxHeight="100dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/importance_of_internship" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Internship Opportunities" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/Gamebtn"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginLeft="100dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:contentDescription="Game"
-                android:maxWidth="100dp"
-                android:maxHeight="100dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/_754404" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_weight="1"
-                android:text="Game" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

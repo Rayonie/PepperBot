@@ -13,7 +13,7 @@ u:(how are you doing) I am having a wonderful day!
 
 u: (How are you)I'm doing well, thank you for asking. How about you?
 
-u: (Good afternoon) Good [time_of_day]. How can I help you?
+u: (Good afternoon) Good afternoon. How can I help you?
 
 u: (See you later)Goodbye! Have a great day!
 
@@ -22,3 +22,19 @@ u: (Thank you)You're welcome! If you need any further assistance, feel free to a
 u: (What is your name)I am QiBot, a friendly virtual assistant here to help you.
 
 u: (What can you do)I can provide information, answer questions, and assist with various tasks. Just let me know what you need help with!
+
+u: (What is this course about) This course is Diploma in Digital Design and Development, within this course, you will learn how to code to create programs on various platform such as android and HTML for websites. Not just that but also design the UI/UX side of stuff as well.
+
+u: (What are the CCA available and how many are there) You may discover your interests and fully realise your potential with close to 100 co-curricular activities at RP to choose from. There is sports such as basketball, Football, Badminton. There are also school related club such as SOI club for our School of Infocomm. All the available CCA can be seen in the Republic Polytechnic Website under Co-Curricular Activities.
+
+u: (What programs does Republic Polytechnic offer?) We offer a wide range of diplomas such as this diploma Digital Design and Development, Infocomm Security, Financial Technology for School of Infocomm. For more information for other Schools in Republic Polytechinic, Please visit our website.
+
+u: (What are the admission requirements?) The admission requirements is to have a O level certificate and you are able to admit to any course in Republic Polytechnic depending on your O level score.
+
+u: (Are there internships available?) Yes there are internships available. RP recently just started having overseas internships again after the pandemic.
+
+u: (How many schools are there in Republic Polytechnic) There a total of 7 schools, School of Applied Science, School of Engineering, School of Hospitality, School of Infocomm, School of Management and Communication, School of Sports and Leisure, School of Technology for the Arts.
+
+u:(e:Dialog/NotUnderstood) I don't understand
+
+u:(e:Dialog/SpeakFailure) I can't answer this

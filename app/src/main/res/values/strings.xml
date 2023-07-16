@@ -49,4 +49,6 @@
     <string name="menu3_3">• 国家:</string>
     <string name="menu3_4">• 指定3个选项（表示3个不同的国家/地区）</string>
     <string name="menu3_5">• 日本（高GPA至少3.0或以上，GPA至少3.5为佳，仅限新加坡公民）、中国、越南、泰国和印度尼西亚。</string>
+
+    <string name="ask"> Ask me anything that is related to school!</string>
 </resources>
