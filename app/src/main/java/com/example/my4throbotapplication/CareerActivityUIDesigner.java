@@ -125,7 +125,10 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("vrrrrrroooooooooommm! We have arrived at the career opportunities!") // Set the text to say.
+                .withText("vrrrrrroooooooooommm! We have arrived at the career opportunities! Oh look! we have landed in career of UI Designer!" +
+                        "The opportunity to be creative. As a UI designer, you’ll create beautiful, impactful products by mastering color, hierarchy, and iconography, and staying on top of typography trends." +
+                        "The chance to make a difference in peoples lives. UI designers have the opportunity to shape the technology all around us by ensuring products are accessible, inclusive, and solves problems." +
+                        "Flexibility and variety. As a UI designer, you’ll have the chance to work in a range of sectors—from banking to fashion, e-commerce to healthcare. You’ll also have options to work as a remote UI designer, freelance, or in-house etc.") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)

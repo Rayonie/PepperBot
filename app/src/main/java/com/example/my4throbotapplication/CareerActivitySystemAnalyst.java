@@ -94,7 +94,8 @@ public class CareerActivitySystemAnalyst extends CareerActivityUIDesigner implem
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("siiiiuuuuuuuuuuuuuuuuu! Here, we can learn about being a System Analyst") // Set the text to say.
+                .withText("wvooooouuuuuuuuuuuuuuuuu! Here, we can learn about being a System Analyst!" +
+                        "System analysts play an absolutely essential part in the economy by ensuring the organizations have well designed, well maintained and functioning IT equipment. They help organizations to be more efficient, more secure and to reduce costs. Without them, businesses would be stuck and not able to progress and, therefore, the work of each and every systems analyst is incredibly meaningful!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)

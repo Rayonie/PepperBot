@@ -93,7 +93,8 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("siiiiuuuuuuuuuuuuuuuuu! Here, we can learn about being a UX Designer") // Set the text to say.
+                .withText("wvooooouuuuuuuuuuuuuuuuu! Here, we have landed in UX Designer!" +
+                        "There aren’t too many jobs out there that combine both creativity and analytical thinking. If you want a career that incorporates both, UX design is the ideal meeting point.") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
