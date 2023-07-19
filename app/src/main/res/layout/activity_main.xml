@@ -5,7 +5,7 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/homebg"
+    android:background="@drawable/mainbg"
     android:gravity="center">
 
 
@@ -24,8 +24,8 @@
 
     <ImageButton
         android:id="@+id/Internbtn"
-        android:layout_width="179dp"
-        android:layout_height="282dp"
+        android:layout_width="185dp"
+        android:layout_height="307dp"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="136dp"
         android:adjustViewBounds="true"
@@ -36,8 +36,8 @@
         android:scaleType="fitXY"
         android:scaleX="0.9"
         android:scaleY="0.9"
-        android:translationX="-5dp"
-        android:translationY="80dp"
+        android:translationX="-53dp"
+        android:translationY="81dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Careerbtn" />
@@ -77,16 +77,16 @@
         android:scaleType="fitXY"
         android:scaleX="0.9"
         android:scaleY="0.9"
-        android:translationX="-15dp"
-        android:translationY="50dp"
+        android:translationX="-32dp"
+        android:translationY="52dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Gamebtn" />
 
     <ImageButton
         android:id="@+id/Gamebtn"
-        android:layout_width="168dp"
-        android:layout_height="320dp"
+        android:layout_width="185dp"
+        android:layout_height="307dp"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="120dp"
         android:adjustViewBounds="true"
@@ -97,8 +97,7 @@
         android:scaleType="fitXY"
         android:scaleX="0.9"
         android:scaleY="0.9"
-        android:translationX="-5dp"
-        android:translationY="80dp"
+        android:translationY="65dp"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Coursebtn" />
