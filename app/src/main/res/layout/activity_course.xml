@@ -11,7 +11,7 @@
         android:id="@+id/image_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="80dp"
+        android:padding="70dp"
         app:iss_auto_cycle="true"
         app:iss_period="5000"
         app:iss_delay="5000"
