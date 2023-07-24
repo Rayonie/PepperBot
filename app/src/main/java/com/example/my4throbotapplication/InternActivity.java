@@ -109,7 +109,7 @@ public class InternActivity extends AppCompatActivity implements RobotLifecycleC
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("Welcome to space intern part, in here you may know more information about your future.") // Set the text to say.
+                .withText("Welcome to space intern part, in here you may know more information about your future .") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
