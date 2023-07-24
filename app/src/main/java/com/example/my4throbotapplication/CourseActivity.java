@@ -13,6 +13,9 @@ import com.aldebaran.qi.sdk.design.activity.RobotActivity;
 import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.conversation.Say;
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 
 import androidx.annotation.NonNull;
 
@@ -32,85 +35,43 @@ import java.util.List;
 public class CourseActivity extends AppCompatActivity implements RobotLifecycleCallbacks {
 
 
-    ViewPager2 viewPager2;
 
     //implementing auto slide facility
 
-    private Handler slideHandler = new Handler();
+    private QiContext qiContext;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        QiSDK.register(this,this);
+        QiSDK.register(this, this);
         setContentView(R.layout.activity_course);
-
-        viewPager2 = findViewById(R.id.viewPagerImageSlider);
-
-        List<SlideItem> slideItem = new ArrayList<>();
-        slideItem.add(new SlideItem(R.drawable.slide1));
-        slideItem.add(new SlideItem(R.drawable.slide2));
-        slideItem.add(new SlideItem(R.drawable.slide3));
-
-        viewPager2.setAdapter(new SlideAdapter(slideItem, viewPager2));
-
-        viewPager2.setClipToPadding(false);
-        viewPager2.setClipChildren(false);
-        viewPager2.setOffscreenPageLimit(5);
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
         QiSDK.register(this, this);
 
-        CompositePageTransformer compositionTransform = new CompositePageTransformer();
-        compositionTransform.addTransformer(new MarginPageTransformer(30));
-        compositionTransform.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
+        ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
 
-                float r = 1 - Math.abs(position);
-                page.setScaleY(0.85f + r * 0.15f);
-            }
-        });
+// imageList.add(new SlideModel("String Url" or R.drawable)
+// imageList.add(new SlideModel("String Url" or R.drawable, "title") You can add title
 
-        viewPager2.setPageTransformer(compositionTransform);
+        imageList.add(new SlideModel(R.drawable.slide1, "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design, bringing to life captivating visions that inspire and delight.", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide2, "Discover the art of coding and unleash your potential to create anything you imagine, as you embark on a thrilling journey of learning how to code, where innovation knows no bounds.", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide3, "Embark on an awe-inspiring journey of experiencing and designing captivating VR games, immersing yourself in a world of limitless possibilities that will leave you spellbound and craving for more!", ScaleTypes.CENTER_CROP));
 
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-
-                slideHandler.removeCallbacks(slideRunnable);
-                slideHandler.postDelayed(slideRunnable, 4000);
-            }
-        });
-
+        ImageSlider imageSlider = findViewById(R.id.image_slider);
+        imageSlider.setImageList(imageList);
 
     }
 
-    private Runnable slideRunnable = new Runnable() {
-        @Override
-        public void run() {
 
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-        }
-    };
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        slideHandler.removeCallbacks(slideRunnable);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        slideHandler.postDelayed(slideRunnable, 4000);
-    }
 
     @Override
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("Hi fellow astronauts! Here are some key modules you will learn in this course") // Set the text to say.
+                .withText("Hi fellow astronauts! Here are some key modules you will learn in this course" +
+                        "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design, bringing to life captivating visions that inspire and delight." +
+                        "Discover the art of coding and unleash your potential to create anything you imagine, as you embark on a thrilling journey of learning how to code, where innovation knows no bounds." +
+                        "Embark on an awe-inspiring journey of experiencing and designing captivating VR games, immersing yourself in a world of limitless possibilities that will leave you spellbound and craving for more!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
