@@ -17,7 +17,7 @@ import com.example.my4throbotapplication.intern.utils.AnimationUtils;
 
 import java.util.Locale;
 
-public class InternActivity extends AppCompatActivity {
+public class InternActivity extends AppCompatActivity  implements RobotLifecycleCallbacks{
     protected ActivityInternBinding binding;
 
     @Override
@@ -81,6 +81,39 @@ public class InternActivity extends AppCompatActivity {
         });
 
         AnimationUtils.ufoAnimation(binding.ivUfo,0.5f,0.8f);
+
+    }
+    @Override
+    public void onRobotFocusGained(QiContext qiContext) {
+
+        Say say = SayBuilder.with(qiContext) // Create the builder with the context.
+                .withText("Welcome to space intern part, in here you may know more information about your future.") // Set the text to say.
+                .build(); // Build the say action.// Create a new say action.
+
+        Animation myAnimation = AnimationBuilder.with(qiContext)
+                .withResources(R.raw.raise_left_hand_b004)
+                .build();
+        Animate animate = AnimateBuilder.with(qiContext)
+                .withAnimation(myAnimation)
+                .build();
+
+        // Execute the action.
+        say.run();
+        animate.run();
+
+//
+    }
+
+    @Override
+    public void onRobotFocusLost() {
+        // The robot focus is lost.
+//        if(chat!=null){
+//            chat.removeAllOnStartedListeners();
+//        }
+    }
+
+    @Override
+    public void onRobotFocusRefused(String reason) {
 
     }
 
