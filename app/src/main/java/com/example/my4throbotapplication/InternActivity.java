@@ -46,6 +46,7 @@ public class InternActivity extends AppCompatActivity  implements RobotLifecycle
         super.onCreate(savedInstanceState);
         binding = ActivityInternBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        QiSDK.register(this, this);
 
 
         binding.ivStar3.setOnClickListener(new View.OnClickListener() {
