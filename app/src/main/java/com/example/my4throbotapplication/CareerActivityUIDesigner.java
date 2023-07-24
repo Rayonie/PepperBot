@@ -30,11 +30,15 @@ import com.aldebaran.qi.sdk.object.conversation.Chat;
 import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
 import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.conversation.Topic;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
 public class CareerActivityUIDesigner extends AppCompatActivity implements RobotLifecycleCallbacks{
     VideoView career_vv1;
     ImageView career_ui, career_ux, career_develop, career_analyst;
     private Chat chat;
+    // Store the head touch sensor.
+    private TouchSensor headTouchSensor;
 
 
     @Override
@@ -138,6 +142,17 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
                 .withAnimation(myAnimation)
                 .build();
 
+        // Get the Touch service from the QiContext.
+        Touch touch = qiContext.getTouch();
+
+        // Get the head touch sensor.
+        headTouchSensor = touch.getSensor("Head/Touch");
+
+        // Add onStateChanged listener.
+        headTouchSensor.addOnStateChangedListener(touchState -> {
+            Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+        });
+
         // Execute the action.
         say.run();
         animate.run();
@@ -151,6 +166,10 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
 //        if(chat!=null){
 //            chat.removeAllOnStartedListeners();
 //        }
+        // Remove onStateChanged listeners.
+        if (headTouchSensor != null) {
+            headTouchSensor.removeAllOnStateChangedListeners();
+        }
     }
 
     @Override
