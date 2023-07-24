@@ -72,7 +72,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             @Override
             public void onClick(View view) {
                 // Set the button onClick listener.
-                TakePicButton.setOnClickListener(v -> takePicture());
+                takePicture();
             }
         });
 
@@ -127,6 +127,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     public void takePicture() {
         // Check that the Activity owns the focus.
         if (qiContext == null) {
+            Log.e(TAG, "qiContext is null. Cannot take a picture.");
             return;
         }
 
@@ -139,6 +140,13 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         });
 
         timestampedImageHandleFuture.andThenConsume(timestampedImageHandle -> {
+            try {
+                // Consume take picture action when it's ready
+                Log.i(TAG, "Picture taken");
+                // Rest of the code...
+            } catch (Exception e) {
+                Log.e(TAG, "Error while processing the picture: " + e.getMessage());
+            }
             // Consume take picture action when it's ready
             Log.i(TAG, "Picture taken");
             // get picture
@@ -172,7 +180,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     @Override
     public void onRobotFocusGained(QiContext qiContext) {
         // Build the action.
-        Future<TakePicture> takePictureFuture = TakePictureBuilder.with(qiContext).buildAsync();
+        takePictureFuture = TakePictureBuilder.with(qiContext).buildAsync();
         
 
         // Store the provided QiContext.
