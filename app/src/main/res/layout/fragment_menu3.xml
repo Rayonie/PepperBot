@@ -16,50 +16,59 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
         android:text="@string/menu3"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical" />
+        android:textSize="14sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
         android:text="@string/menu3_1"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"/>
+        android:textSize="14sp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
         android:text="@string/menu3_2"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"/>
+        android:textSize="14sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
         android:text="@string/menu3_3"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"/>
+        android:textSize="14sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
         android:text="@string/menu3_4"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"/>
+        android:textSize="14sp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
         android:text="@string/menu3_5"
         android:textColor="#333333"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"
-        android:layout_marginTop="5dp"/>
+        android:textSize="14sp" />
 </LinearLayout>
