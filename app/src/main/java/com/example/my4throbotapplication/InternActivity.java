@@ -5,19 +5,40 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.VideoView;
 
+import com.aldebaran.qi.Future;
+import com.aldebaran.qi.sdk.QiContext;
+import com.aldebaran.qi.sdk.QiSDK;
+import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
+import com.aldebaran.qi.sdk.builder.AnimateBuilder;
+import com.aldebaran.qi.sdk.builder.AnimationBuilder;
+import com.aldebaran.qi.sdk.builder.ChatBuilder;
+import com.aldebaran.qi.sdk.builder.QiChatbotBuilder;
+import com.aldebaran.qi.sdk.builder.SayBuilder;
+import com.aldebaran.qi.sdk.builder.TopicBuilder;
+import com.aldebaran.qi.sdk.design.activity.RobotActivity;
+import com.aldebaran.qi.sdk.object.actuation.Animate;
+import com.aldebaran.qi.sdk.object.actuation.Animation;
+import com.aldebaran.qi.sdk.object.conversation.Chat;
+import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
+import com.aldebaran.qi.sdk.object.conversation.Say;
+import com.aldebaran.qi.sdk.object.conversation.Topic;
 import com.example.my4throbotapplication.databinding.ActivityInternBinding;
-import com.example.my4throbotapplication.databinding.ActivityMainBinding;
 import com.example.my4throbotapplication.intern.MenuDetailsActivity;
 import com.example.my4throbotapplication.intern.utils.AnimationUtils;
 
 import java.util.Locale;
 
-public class InternActivity extends AppCompatActivity  implements RobotLifecycleCallbacks{
+public class InternActivity extends AppCompatActivity implements RobotLifecycleCallbacks{
     protected ActivityInternBinding binding;
 
     @Override
@@ -25,6 +46,7 @@ public class InternActivity extends AppCompatActivity  implements RobotLifecycle
         super.onCreate(savedInstanceState);
         binding = ActivityInternBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        QiSDK.register(this, this);
 
 
         binding.ivStar3.setOnClickListener(new View.OnClickListener() {
