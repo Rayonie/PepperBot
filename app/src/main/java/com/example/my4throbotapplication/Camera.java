@@ -46,12 +46,8 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
     private Future<TimestampedImageHandle> timestampedImageHandleFuture;
     // Future for take picture action.
     private Future<TakePicture> takePictureFuture;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
             super.onCreate(savedInstanceState);
             // Register the RobotLifecycleCallbacks to this Activity.
             QiSDK.register(this, this);
