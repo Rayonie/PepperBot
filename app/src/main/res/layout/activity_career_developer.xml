@@ -52,7 +52,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1400dp"
+                android:layout_width="1200dp"
                 android:layout_height="400dp"
                 android:layout_weight="1">
 
@@ -158,6 +158,32 @@
                 android:translationY="120dp"
                 app:srcCompat="@drawable/c_orangeland" />
         </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageViewbg4"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvdeveloperdescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:layout_weight="5"
+                android:padding="30dp"
+                android:shadowColor="#000000"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="8"
+                android:text="A career in web development holds the potential for lifelong learning, requiring professionals to keep up with cutting-edge technology as it constantly changes. Web developers also earn strong salaries and enjoy steady job security. This career includes the opportunity to create things — in this case, websites and applications, or apps—for people to use on a day-to-day basis."
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" /> <!-- Add the desired margin in dp units (e.g., 16dp) -->
+
+        </LinearLayout>
 
     </RelativeLayout>
 

@@ -1,11 +1,17 @@
 package com.example.my4throbotapplication;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +29,7 @@ import com.aldebaran.qi.sdk.object.conversation.Say;
 public class CareerActivityUXDesigner extends CareerActivityUIDesigner implements RobotLifecycleCallbacks {
 
     ImageView career_ui, career_ux, career_develop, career_analyst;
+    TextView tvuxdescripition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,45 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
         career_ux = findViewById(R.id.planet4);
         career_develop = findViewById(R.id.planet1);
         career_analyst = findViewById(R.id.planet2);
+        tvuxdescripition = findViewById(R.id.tvuxdescription);
+
+        // Set the initial alpha to 0 (fully transparent) and translationY to 100 pixels
+        tvuxdescripition.setAlpha(0f);
+        tvuxdescripition.setTranslationY(100f);
+
+        // Define the delay before starting the animation in milliseconds
+        int startDelay = 1500; // 1.5 seconds
+
+        // Define the duration of the fade-in and move-up effects in milliseconds
+        int fadeInDuration = 2000; // 2 seconds
+        int moveUpDuration = 1500;
+
+        // Create a ShapeDrawable with a background color (e.g., light gray)
+        ShapeDrawable shapeDrawable = new ShapeDrawable();
+        shapeDrawable.setShape(new RectShape());
+        shapeDrawable.getPaint().setColor(Color.parseColor("#904f4f4f")); // Replace this with the desired color resource or an actual color
+
+        // Set the ShapeDrawable as the background of the TextView
+        tvuxdescripition.setBackground(shapeDrawable);
+
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Create ObjectAnimator for fade-in effect
+                ObjectAnimator fadeInAnimator = ObjectAnimator.ofFloat(tvuxdescripition, "alpha", 0f, 1f);
+                fadeInAnimator.setDuration(fadeInDuration);
+
+                // Create ObjectAnimator for move-up effect
+                ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(tvuxdescripition, "translationY", 100f, 0f);
+                moveUpAnimator.setDuration(moveUpDuration);
+
+                // Start the fade-in and move-up animations together
+                fadeInAnimator.start();
+                moveUpAnimator.start();
+            }
+        }, startDelay);
 
 
 
@@ -93,8 +139,7 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("wvooooouuuuuuuuuuuuuuuuu! Here, we have landed in UX Designer!" +
-                        "There aren’t too many jobs out there that combine both creativity and analytical thinking. If you want a career that incorporates both, UX design is the ideal meeting point.") // Set the text to say.
+                .withText("wvooooouuuuuuuuuuuuuuuuu! Here, we have landed in UX Designer!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)

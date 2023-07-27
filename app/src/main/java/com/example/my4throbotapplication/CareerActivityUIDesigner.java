@@ -10,26 +10,26 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.os.Handler;
+import android.animation.ObjectAnimator;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.VideoView;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
+import android.graphics.Color;
 
-import com.aldebaran.qi.Future;
+
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
 import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
 import com.aldebaran.qi.sdk.builder.AnimateBuilder;
 import com.aldebaran.qi.sdk.builder.AnimationBuilder;
-import com.aldebaran.qi.sdk.builder.ChatBuilder;
-import com.aldebaran.qi.sdk.builder.QiChatbotBuilder;
 import com.aldebaran.qi.sdk.builder.SayBuilder;
-import com.aldebaran.qi.sdk.builder.TopicBuilder;
-import com.aldebaran.qi.sdk.design.activity.RobotActivity;
 import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.conversation.Chat;
-import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
 import com.aldebaran.qi.sdk.object.conversation.Say;
-import com.aldebaran.qi.sdk.object.conversation.Topic;
 import com.aldebaran.qi.sdk.object.touch.Touch;
 import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
@@ -37,6 +37,8 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
     VideoView career_vv1;
     ImageView career_ui, career_ux, career_develop, career_analyst;
     private Chat chat;
+
+    TextView tvuidescripition;
     // Store the head touch sensor.
     private TouchSensor headTouchSensor;
 
@@ -46,6 +48,9 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_career_uidesigner);
         QiSDK.register(this, this);
+
+        // Find the TextView by its id
+        tvuidescripition = findViewById(R.id.tvuidescription);
 
         career_vv1 = findViewById(R.id.careervideo1);
         career_ui = findViewById(R.id.planet3);
@@ -57,6 +62,44 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         Uri u = Uri.parse(path);
         career_vv1.setVideoURI(u);
         career_vv1.start();
+
+        // Set the initial alpha to 0 (fully transparent) and translationY to 100 pixels
+        tvuidescripition.setAlpha(0f);
+        tvuidescripition.setTranslationY(100f);
+
+        // Define the delay before starting the animation in milliseconds
+        int startDelay = 1500; // 1.5 seconds
+
+        // Define the duration of the fade-in and move-up effects in milliseconds
+        int fadeInDuration = 2000; // 2 seconds
+        int moveUpDuration = 1500;
+
+        // Create a ShapeDrawable with a background color (e.g., light gray)
+        ShapeDrawable shapeDrawable = new ShapeDrawable();
+        shapeDrawable.setShape(new RectShape());
+        shapeDrawable.getPaint().setColor(Color.parseColor("#90D3D3D3")); // Replace this with the desired color resource or an actual color
+
+        // Set the ShapeDrawable as the background of the TextView
+        tvuidescripition.setBackground(shapeDrawable);
+
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Create ObjectAnimator for fade-in effect
+                ObjectAnimator fadeInAnimator = ObjectAnimator.ofFloat(tvuidescripition, "alpha", 0f, 1f);
+                fadeInAnimator.setDuration(fadeInDuration);
+
+                // Create ObjectAnimator for move-up effect
+                ObjectAnimator moveUpAnimator = ObjectAnimator.ofFloat(tvuidescripition, "translationY", 100f, 0f);
+                moveUpAnimator.setDuration(moveUpDuration);
+
+                // Start the fade-in and move-up animations together
+                fadeInAnimator.start();
+                moveUpAnimator.start();
+            }
+        }, startDelay);
 
         career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override

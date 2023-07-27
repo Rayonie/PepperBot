@@ -84,7 +84,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="1400dp"
+                android:layout_width="1200dp"
                 android:layout_height="400dp"
                 android:layout_weight="1">
 
@@ -125,6 +125,8 @@
                     android:layout_width="300dp"
                     android:layout_height="300dp"
                     android:layout_weight="1"
+                    android:scaleX="1.1"
+                    android:scaleY="1.1"
                     app:srcCompat="@drawable/c_ui_designer_greenplanet" />
 
                 <TextView
@@ -159,6 +161,33 @@
                 android:translationY="120dp"
                 app:srcCompat="@drawable/c_redland" />
         </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/imageViewbg3"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvsadescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:layout_weight="5"
+                android:padding="30dp"
+                android:shadowColor="#000000"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="8"
+                android:text="System analysts play an absolutely essential part in the economy by ensuring the organizations have well designed, well maintained and functioning IT equipment. They help organizations to be more efficient, more secure and to reduce costs. Without them, businesses would be stuck and not able to progress and, therefore, the work of each and every systems analyst is incredibly meaningful!"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" /> <!-- Add the desired margin in dp units (e.g., 16dp) -->
+
+        </LinearLayout>
 
     </RelativeLayout>
 
