@@ -108,43 +108,7 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
             // Store the provided QiContext.
             this.qiContext = qiContext;
 
-            // The robot focus is gained.
-            // Create a new say action.
-            Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                    .withText("Hello human! how are you?") // Set the text to say.
-                    .build(); // Build the say action.// Create a new say action.
 
-            // Create the second action.
-            // Create an animation object.
-            Animation myAnimation = AnimationBuilder.with(qiContext)
-                    .withResources(R.raw.elephant_a001)
-                    .build();
-            //Animate animate = AnimateBuilder.with(qiContext)
-            //        .withAnimation(myAnimation)
-            //        .build();
-
-            // Execute the action.
-            say.run();
-            //animate.run();
-
-            //Topic topic = TopicBuilder.with(qiContext)
-            //        .withResource(R.raw.greetings)
-            //         .build();
-
-            //QiChatbot qiChatbot = QiChatbotBuilder.with(qiContext)
-            //        .withTopic(topic)
-            //        .build();
-
-            // chat = ChatBuilder.with(qiContext)
-            //        .withChatbot(qiChatbot)
-            //       .build();
-            //chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
-            //Future<Void> chatFuture = chat.async().run();
-            //chatFuture.thenConsume(future -> {
-            //    if (future.hasError()) {
-            //        Log.e(TAG, "Discussion finished with error.", future.getError());
-            //    }
-            //});
         }
 
         @Override
