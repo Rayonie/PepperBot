@@ -57,7 +57,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         Gamebtn = findViewById(R.id.Gamebtn);
         Internbtn = findViewById(R.id.Internbtn);
         Askbtn = findViewById(R.id.Askbtn);
-        Cambtn = findViewById(R.id.camerabtn);
+        Cambtn = findViewById(R.id.Cambtn);
 
 
         Askbtn.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +105,6 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
             }
         });
 
-
         Cambtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +113,8 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
                 startActivity(i);
             }
         });
+
+
 
 
     }
