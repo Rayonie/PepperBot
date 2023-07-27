@@ -35,7 +35,7 @@ import java.nio.ByteBuffer;
 public class MainActivity extends RobotActivity implements RobotLifecycleCallbacks {
 
 
-    ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn;
+    ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn, Cambtn;
     Button Askbtn;
     private Chat chat;
     // The button used to start take picture action.
@@ -57,6 +57,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         Gamebtn = findViewById(R.id.Gamebtn);
         Internbtn = findViewById(R.id.Internbtn);
         Askbtn = findViewById(R.id.Askbtn);
+        Cambtn = findViewById(R.id.camerabtn);
 
 
         Askbtn.setOnClickListener(new View.OnClickListener() {
@@ -103,6 +104,17 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
                 startActivity(i);
             }
         });
+
+
+        Cambtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,
+                        Camera.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
