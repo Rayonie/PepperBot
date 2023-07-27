@@ -98,7 +98,7 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
-                .withResources(R.raw.raise_left_hand_b004)
+                .withResources(R.raw.exclamation_both_hands_a007)
                 .build();
         Animate animate = AnimateBuilder.with(qiContext)
                 .withAnimation(myAnimation)

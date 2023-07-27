@@ -3,19 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Camera">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Camera"
+    android:background="@drawable/spacecatoonbg">
 
-
-    <ImageView
-        android:id="@+id/picture_view"
-        android:layout_width="300dp"
-        android:layout_height="300dp" />
 
     <Button
         android:id="@+id/take_pic_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Take a picture" />
+        android:text="Ready to take a picture? Click here!"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/picture_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"/>
+    </LinearLayout>
 
 </LinearLayout>

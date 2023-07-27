@@ -105,10 +105,12 @@
 
     <ImageButton
         android:id="@+id/Cambtn"
-        android:layout_width="143dp"
-        android:layout_height="127dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="380dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="148dp"
+        android:scaleX="0.2"
+        android:scaleY="0.2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/cameraicon" />

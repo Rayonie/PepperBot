@@ -19,9 +19,11 @@ import com.aldebaran.qi.Future;
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
 import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
+import com.aldebaran.qi.sdk.builder.AnimateBuilder;
 import com.aldebaran.qi.sdk.builder.AnimationBuilder;
 import com.aldebaran.qi.sdk.builder.SayBuilder;
 import com.aldebaran.qi.sdk.builder.TakePictureBuilder;
+import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.camera.TakePicture;
 import com.aldebaran.qi.sdk.object.conversation.Chat;
@@ -42,7 +44,6 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
     private QiContext qiContext;
     // TimestampedImage future.
     private Future<TimestampedImageHandle> timestampedImageHandleFuture;
-
     private Future<TakePicture> takePictureFuture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,12 +68,12 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
         // Disable the button.
         TakePicButton.setEnabled(false);
 
-        Future<TimestampedImageHandle> timestampedImageHandleFuture = takePictureFuture.andThenCompose(takePicture -> {
-            Log.i(TAG, "take picture launched!");
-            return takePicture.async().run();
-            });
-
-        timestampedImageHandleFuture.andThenConsume(timestampedImageHandle -> {
+        // Check if takePictureFuture is properly initialized before using it.
+        if (takePictureFuture != null) {
+            takePictureFuture.andThenCompose(takePicture -> {
+                Log.i(TAG, "take picture launched!");
+                return takePicture.async().run();
+            }).andThenConsume(timestampedImageHandle -> {
             // Consume take picture action when it's ready
             Log.i(TAG, "Picture taken");
             // get picture
@@ -93,7 +94,10 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
             Bitmap pictureBitmap = BitmapFactory.decodeByteArray(pictureArray, 0, pictureBufferSize);
             runOnUiThread(() -> pictureView.setImageBitmap(pictureBitmap));
         });
+        } else {
+            Log.e(TAG, "takePictureFuture is null. Make sure to initialize it before using.");
         }
+    }
 
 
         @Override
@@ -105,9 +109,30 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
 
         @Override
         public void onRobotFocusGained(QiContext qiContext) {
+            // Build the action and store it in the class variable.
+            takePictureFuture = TakePictureBuilder.with(qiContext).buildAsync();
+
             // Store the provided QiContext.
             this.qiContext = qiContext;
 
+            // The robot focus is gained.
+            // Create a new say action.
+            Say say = SayBuilder.with(qiContext) // Create the builder with the context.
+                    .withText("Say cheese!") // Set the text to say.
+                    .build(); // Build the say action.// Create a new say action.
+
+            // Create the second action.
+            // Create an animation object.
+            Animation myAnimation = AnimationBuilder.with(qiContext)
+                    .withResources(R.raw.exclamation_both_hands_a007)
+                    .build();
+            Animate animate = AnimateBuilder.with(qiContext)
+                    .withAnimation(myAnimation)
+                    .build();
+
+            // Execute the action.
+            animate.run();
+            say.run();
 
         }
 
