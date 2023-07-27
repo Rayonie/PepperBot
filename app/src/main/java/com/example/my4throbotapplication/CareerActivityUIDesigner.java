@@ -151,10 +151,11 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         // Add onStateChanged listener.
         headTouchSensor.addOnStateChangedListener(touchState -> {
             Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+            say.run();
         });
 
         // Execute the action.
-        say.run();
+
         animate.run();
 
 //
