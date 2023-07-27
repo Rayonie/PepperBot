@@ -36,7 +36,6 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         ImageButton TakePicButton;
         private Chat chat;
         // The button used to start take picture action.
@@ -51,8 +50,6 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
         // Future for take picture action.
         private Future<TakePicture> takePictureFuture;
 
-
-        @SuppressLint({"MissingInflatedId", "WrongViewCast"})
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -71,51 +68,6 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
                 }
             });
 
-
-            Askbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,
-                            AskMeActivity.class);
-                    startActivity(i);
-                }
-            });
-
-            Coursebtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,
-                            CourseActivity.class);
-                    startActivity(i);
-                }
-            });
-
-            Careerbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,
-                            CareerActivityUIDesigner.class);
-                    startActivity(i);
-                }
-            });
-
-            Gamebtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,
-                            GameActivity.class);
-                    startActivity(i);
-                }
-            });
-
-            Internbtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(MainActivity.this,
-                            InternActivity.class);
-                    startActivity(i);
-                }
-            });
 
         }
 
