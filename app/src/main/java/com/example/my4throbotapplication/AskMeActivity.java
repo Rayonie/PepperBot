@@ -55,7 +55,7 @@ public class AskMeActivity extends RobotActivity implements RobotLifecycleCallba
                 .build();
 
         // Execute the action.
-        say.async().run();
+        say.run();
         animate.async().run();
 
         Topic topic = TopicBuilder.with(qiContext)
