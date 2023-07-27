@@ -33,29 +33,29 @@ import com.aldebaran.qi.sdk.object.image.TimestampedImageHandle;
 import java.nio.ByteBuffer;
 
 public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks {
+    Button TakePicButton;
+    private Chat chat;
+    // The button used to start take picture action.
+    private Button button;
+    // An image view used to show the picture.
+    private ImageView pictureView;
+    // The QiContext provided by the QiSDK.
+    // The QiContext provided by the QiSDK.
+    private QiContext qiContext;
+    // TimestampedImage future.
+    private Future<TimestampedImageHandle> timestampedImageHandleFuture;
+    // Future for take picture action.
+    private Future<TakePicture> takePictureFuture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        ImageButton TakePicButton;
-        private Chat chat;
-        // The button used to start take picture action.
-        private Button button;
-        // An image view used to show the picture.
-        private ImageView pictureView;
-        // The QiContext provided by the QiSDK.
-        // The QiContext provided by the QiSDK.
-        private QiContext qiContext;
-        // TimestampedImage future.
-        private Future<TimestampedImageHandle> timestampedImageHandleFuture;
-        // Future for take picture action.
-        private Future<TakePicture> takePictureFuture;
 
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
+
+
             super.onCreate(savedInstanceState);
             // Register the RobotLifecycleCallbacks to this Activity.
             QiSDK.register(this, this);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.activity_camera);
 
             TakePicButton = findViewById(R.id.take_pic_button);
             pictureView = findViewById(R.id.picture_view);
