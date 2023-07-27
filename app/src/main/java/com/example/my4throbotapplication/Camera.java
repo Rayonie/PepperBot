@@ -34,17 +34,15 @@ import java.nio.ByteBuffer;
 
 public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks {
     Button TakePicButton;
-    private Chat chat;
     // The button used to start take picture action.
     private Button button;
     // An image view used to show the picture.
     private ImageView pictureView;
     // The QiContext provided by the QiSDK.
-    // The QiContext provided by the QiSDK.
     private QiContext qiContext;
     // TimestampedImage future.
     private Future<TimestampedImageHandle> timestampedImageHandleFuture;
-    // Future for take picture action.
+
     private Future<TakePicture> takePictureFuture;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,60 +54,45 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
             TakePicButton = findViewById(R.id.take_pic_button);
             pictureView = findViewById(R.id.picture_view);
 
-            TakePicButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Set the button onClick listener.
-                    takePicture();
-                }
-            });
-
+            TakePicButton.setOnClickListener(v -> takePicture());
 
         }
 
-        public void takePicture() {
-            // Check that the Activity owns the focus.
-            if (qiContext == null) {
-                Log.e(TAG, "qiContext is null. Cannot take a picture.");
-                return;
-            }
+    public void takePicture() {
+        // Check that the Activity owns the focus.
+        if (qiContext == null) {
+            return;
+        }
 
-            // Disable the button.
-            button.setEnabled(false);
+        // Disable the button.
+        TakePicButton.setEnabled(false);
 
-            Future<TimestampedImageHandle> timestampedImageHandleFuture = takePictureFuture.andThenCompose(takePicture -> {
-                Log.i(TAG, "take picture launched!");
-                return takePicture.async().run();
+        Future<TimestampedImageHandle> timestampedImageHandleFuture = takePictureFuture.andThenCompose(takePicture -> {
+            Log.i(TAG, "take picture launched!");
+            return takePicture.async().run();
             });
 
-            timestampedImageHandleFuture.andThenConsume(timestampedImageHandle -> {
-                try {
-                    // Consume take picture action when it's ready
-                    Log.i(TAG, "Picture taken");
-                    // Rest of the code...
-                } catch (Exception e) {
-                    Log.e(TAG, "Error while processing the picture: " + e.getMessage());
-                }
-                // Consume take picture action when it's ready
-                Log.i(TAG, "Picture taken");
-                // get picture
-                EncodedImageHandle encodedImageHandle = timestampedImageHandle.getImage();
+        timestampedImageHandleFuture.andThenConsume(timestampedImageHandle -> {
+            // Consume take picture action when it's ready
+            Log.i(TAG, "Picture taken");
+            // get picture
+            EncodedImageHandle encodedImageHandle = timestampedImageHandle.getImage();
 
-                EncodedImage encodedImage = encodedImageHandle.getValue();
-                Log.i(TAG, "PICTURE RECEIVED!");
+            EncodedImage encodedImage = encodedImageHandle.getValue();
+            Log.i(TAG, "PICTURE RECEIVED!");
 
-                // get the byte buffer and cast it to byte array
-                ByteBuffer buffer = encodedImage.getData();
-                buffer.rewind();
-                final int pictureBufferSize = buffer.remaining();
-                final byte[] pictureArray = new byte[pictureBufferSize];
-                buffer.get(pictureArray);
+            // get the byte buffer and cast it to byte array
+            ByteBuffer buffer = encodedImage.getData();
+            buffer.rewind();
+            final int pictureBufferSize = buffer.remaining();
+            final byte[] pictureArray = new byte[pictureBufferSize];
+            buffer.get(pictureArray);
 
-                Log.i(TAG, "PICTURE RECEIVED! (" + pictureBufferSize + " Bytes)");
-                // display picture
-                Bitmap pictureBitmap = BitmapFactory.decodeByteArray(pictureArray, 0, pictureBufferSize);
-                runOnUiThread(() -> pictureView.setImageBitmap(pictureBitmap));
-            });
+            Log.i(TAG, "PICTURE RECEIVED! (" + pictureBufferSize + " Bytes)");
+            // display picture
+            Bitmap pictureBitmap = BitmapFactory.decodeByteArray(pictureArray, 0, pictureBufferSize);
+            runOnUiThread(() -> pictureView.setImageBitmap(pictureBitmap));
+        });
         }
 
 
@@ -122,10 +105,6 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
 
         @Override
         public void onRobotFocusGained(QiContext qiContext) {
-            // Build the action.
-            takePictureFuture = TakePictureBuilder.with(qiContext).buildAsync();
-
-
             // Store the provided QiContext.
             this.qiContext = qiContext;
 

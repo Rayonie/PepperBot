@@ -66,7 +66,7 @@ public class AskMeActivity extends RobotActivity implements RobotLifecycleCallba
                 .withTopic(topic)
                 .build();
 
-         chat = ChatBuilder.with(qiContext)
+        chat = ChatBuilder.with(qiContext)
                 .withChatbot(qiChatbot)
                .build();
         chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
