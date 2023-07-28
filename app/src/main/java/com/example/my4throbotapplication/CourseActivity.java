@@ -53,9 +53,9 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
 // imageList.add(new SlideModel("String Url" or R.drawable)
 // imageList.add(new SlideModel("String Url" or R.drawable, "title") You can add title
 
-        imageList.add(new SlideModel(R.drawable.slide1, "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design, bringing to life captivating visions that inspire and delight.", ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.slide2, "Discover the art of coding and unleash your potential to create anything you imagine, as you embark on a thrilling journey of learning how to code, where innovation knows no bounds.", ScaleTypes.CENTER_CROP));
-        imageList.add(new SlideModel(R.drawable.slide3, "Embark on an awe-inspiring journey of experiencing and designing captivating VR games, immersing yourself in a world of limitless possibilities that will leave you spellbound and craving for more!", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide1, "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design.", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide2, "Discover the art of coding and unleash your potential to create anything you imagine.", ScaleTypes.CENTER_CROP));
+        imageList.add(new SlideModel(R.drawable.slide3, "Embark on an awe-inspiring journey of experiencing and designing captivating VR games!", ScaleTypes.CENTER_CROP));
 
         ImageSlider imageSlider = findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
@@ -69,9 +69,9 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
                 .withText("Hi fellow astronauts! Here are some key modules you will learn in this course" +
-                        "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design, bringing to life captivating visions that inspire and delight." +
-                        "Discover the art of coding and unleash your potential to create anything you imagine, as you embark on a thrilling journey of learning how to code, where innovation knows no bounds." +
-                        "Embark on an awe-inspiring journey of experiencing and designing captivating VR games, immersing yourself in a world of limitless possibilities that will leave you spellbound and craving for more!") // Set the text to say.
+                        "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design." +
+                        "Discover the art of coding and unleash your potential to create anything you imagines." +
+                        "Embark on an awe-inspiring journey of experiencing and designing captivating VR games!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
