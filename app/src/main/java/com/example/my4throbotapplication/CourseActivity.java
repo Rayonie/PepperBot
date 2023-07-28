@@ -69,9 +69,9 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
                 .withText("Hi fellow astronauts! Here are some key modules you will learn in this course" +
-                        "Harness the boundless potential of your creativity as you embark on a mesmerizing journey of design." +
-                        "Discover the art of coding and unleash your potential to create anything you imagines." +
-                        "Embark on an awe-inspiring journey of experiencing and designing captivating VR games!") // Set the text to say.
+                        "Embark on a mesmerizing journey of design." +
+                        "Discover the art of coding." +
+                        "Design and experience VR games!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
