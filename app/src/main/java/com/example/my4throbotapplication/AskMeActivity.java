@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -26,11 +27,14 @@ import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.conversation.Topic;
 import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
 import com.aldebaran.qi.sdk.design.activity.RobotActivity;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
 public class AskMeActivity extends RobotActivity implements RobotLifecycleCallbacks {
 
     private Chat chat;
 
+    private TouchSensor headTouchSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +80,19 @@ public class AskMeActivity extends RobotActivity implements RobotLifecycleCallba
             if (future.hasError()) {
                 Log.e(TAG, "Discussion finished with error.", future.getError());
             }
+        });
+
+        Touch touch = qiContext.getTouch();
+
+        // Get the head touch sensor.
+        headTouchSensor = touch.getSensor("Head/Touch");
+
+        // Add onStateChanged listener.
+        headTouchSensor.addOnStateChangedListener(touchState -> {
+            Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+            Intent i = new Intent(AskMeActivity.this,
+                    MainActivity.class);
+            startActivity(i);
         });
     }
 

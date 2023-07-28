@@ -1,33 +1,24 @@
 package com.example.my4throbotapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static android.content.ContentValues.TAG;
 
-import com.aldebaran.qi.Future;
-import com.aldebaran.qi.sdk.QiSDK;
-import com.aldebaran.qi.sdk.QiContext;
-import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
-import com.aldebaran.qi.sdk.builder.AnimateBuilder;
-import com.aldebaran.qi.sdk.builder.AnimationBuilder;
-import com.aldebaran.qi.sdk.builder.ChatBuilder;
-import com.aldebaran.qi.sdk.builder.QiChatbotBuilder;
-import com.aldebaran.qi.sdk.builder.TopicBuilder;
-import com.aldebaran.qi.sdk.design.activity.RobotActivity;
-import com.aldebaran.qi.sdk.builder.SayBuilder;
-import com.aldebaran.qi.sdk.object.actuation.Animate;
-import com.aldebaran.qi.sdk.object.actuation.Animation;
-import com.aldebaran.qi.sdk.object.conversation.Chat;
-import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
-import com.aldebaran.qi.sdk.object.conversation.Say;
-import com.aldebaran.qi.sdk.object.conversation.Topic;
-
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
+import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
+import com.aldebaran.qi.sdk.builder.SayBuilder;
+import com.aldebaran.qi.sdk.object.conversation.Say;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener,RobotLifecycleCallbacks {
@@ -45,6 +36,9 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
     boolean playerwon = false;
     private int playerOneScoreCount, playerTwoScoreCount;
+
+    private TouchSensor headTouchSensor;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,6 +200,18 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         say.run();
 
 
+        Touch touch = qiContext.getTouch();
+
+        // Get the head touch sensor.
+        headTouchSensor = touch.getSensor("Head/Touch");
+
+        // Add onStateChanged listener.
+        headTouchSensor.addOnStateChangedListener(touchState -> {
+            Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+            Intent i = new Intent(GameActivity.this,
+                    MainActivity.class);
+            startActivity(i);
+        });
 
     }
 

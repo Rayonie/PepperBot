@@ -31,6 +31,8 @@ import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.image.EncodedImage;
 import com.aldebaran.qi.sdk.object.image.EncodedImageHandle;
 import com.aldebaran.qi.sdk.object.image.TimestampedImageHandle;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
 import java.nio.ByteBuffer;
 
@@ -45,6 +47,8 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
     // TimestampedImage future.
     private Future<TimestampedImageHandle> timestampedImageHandleFuture;
     private Future<TakePicture> takePictureFuture;
+
+    private TouchSensor headTouchSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -134,6 +138,18 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
             animate.run();
             say.run();
 
+            Touch touch = qiContext.getTouch();
+
+            // Get the head touch sensor.
+            headTouchSensor = touch.getSensor("Head/Touch");
+
+            // Add onStateChanged listener.
+            headTouchSensor.addOnStateChangedListener(touchState -> {
+                Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+                Intent i = new Intent(Camera.this,
+                        MainActivity.class);
+                startActivity(i);
+            });
         }
 
         @Override

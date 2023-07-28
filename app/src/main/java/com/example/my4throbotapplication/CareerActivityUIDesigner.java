@@ -2,23 +2,21 @@ package com.example.my4throbotapplication;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.media.MediaPlayer;
+import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.RectShape;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.os.Handler;
-import android.animation.ObjectAnimator;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
-import android.graphics.Color;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.QiSDK;
@@ -101,12 +99,12 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
             }
         }, startDelay);
 
-        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setLooping(false);
-            }
-        });
+//        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                mediaPlayer.setLooping(false);
+//            }
+//        });
 
 
         career_ux.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +129,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(CareerActivityUIDesigner.this,
-                        CareerActivitySystemAnalyst.class);
+                        MainActivity.class);
                 startActivity(i);
             }
         });
@@ -198,7 +196,9 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         // Add onStateChanged listener.
         headTouchSensor.addOnStateChangedListener(touchState -> {
             Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
-            say2.run();
+            Intent i = new Intent(CareerActivityUIDesigner.this,
+                    MainActivity.class);
+            startActivity(i);
         });
 
 //
