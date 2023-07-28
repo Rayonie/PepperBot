@@ -8,18 +8,13 @@ import com.aldebaran.qi.sdk.QiSDK;
 import com.aldebaran.qi.sdk.QiContext;
 import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
 import com.aldebaran.qi.sdk.builder.AnimationBuilder;
-import com.aldebaran.qi.sdk.builder.ChatBuilder;
-import com.aldebaran.qi.sdk.builder.QiChatbotBuilder;
 import com.aldebaran.qi.sdk.builder.TakePictureBuilder;
-import com.aldebaran.qi.sdk.builder.TopicBuilder;
 import com.aldebaran.qi.sdk.design.activity.RobotActivity;
 import com.aldebaran.qi.sdk.builder.SayBuilder;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.camera.TakePicture;
 import com.aldebaran.qi.sdk.object.conversation.Chat;
-import com.aldebaran.qi.sdk.object.conversation.QiChatbot;
 import com.aldebaran.qi.sdk.object.conversation.Say;
-import com.aldebaran.qi.sdk.object.conversation.Topic;
 import com.aldebaran.qi.sdk.object.image.EncodedImage;
 import com.aldebaran.qi.sdk.object.image.EncodedImageHandle;
 import com.aldebaran.qi.sdk.object.image.TimestampedImageHandle;
@@ -43,6 +38,10 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn, Cambtn;
     Button Askbtn;
     private Chat chat;
+    // The button used to start take picture action.
+    private Button button;
+    // An image view used to show the picture.
+
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -51,6 +50,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         // Register the RobotLifecycleCallbacks to this Activity.
         QiSDK.register(this, this);
         setContentView(R.layout.activity_main);
+
 
         Coursebtn = findViewById(R.id.Coursebtn);
         Careerbtn = findViewById(R.id.Careerbtn);
@@ -113,6 +113,10 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
                 startActivity(i);
             }
         });
+
+
+
+
     }
 
 
@@ -144,32 +148,32 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         say.run();
         //animate.run();
 
-        Topic topic = TopicBuilder.with(qiContext)
-                .withResource(R.raw.greetings)
-                .build();
+        //Topic topic = TopicBuilder.with(qiContext)
+        //        .withResource(R.raw.greetings)
+       //         .build();
 
-        QiChatbot qiChatbot = QiChatbotBuilder.with(qiContext)
-                .withTopic(topic)
-                .build();
+        //QiChatbot qiChatbot = QiChatbotBuilder.with(qiContext)
+        //        .withTopic(topic)
+        //        .build();
 
-       chat = ChatBuilder.with(qiContext)
-                .withChatbot(qiChatbot)
-               .build();
-        chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
-        Future<Void> chatFuture = chat.async().run();
-        chatFuture.thenConsume(future -> {
-            if (future.hasError()) {
-                Log.e(TAG, "Discussion finished with error.", future.getError());
-            }
-        });
+       // chat = ChatBuilder.with(qiContext)
+        //        .withChatbot(qiChatbot)
+         //       .build();
+        //chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
+        //Future<Void> chatFuture = chat.async().run();
+        //chatFuture.thenConsume(future -> {
+        //    if (future.hasError()) {
+        //        Log.e(TAG, "Discussion finished with error.", future.getError());
+        //    }
+        //});
     }
 
     @Override
     public void onRobotFocusLost() {
         // The robot focus is lost.
-       if(chat!=null){
-            chat.removeAllOnStartedListeners();
-       }
+    //    if(chat!=null){
+     //       chat.removeAllOnStartedListeners();
+     //   }
     }
 
     @Override

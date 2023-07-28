@@ -3,7 +3,11 @@ topic: ~chat_about_school()
 # Defining extra concepts out of words or group of words
 concept:(hello) [hello hi hey "good morning" greetings]
 concept:(bye) [goodbye bye later]
-
+concept:(cca) [cca CCA "What are the CCA?" "What CCA do they offer?" "how many CCA" "What are the CCA available"]
+concept:(course) ["What is this course about" course "What is Digital design and Development" ]
+concept:(offer) [courses "How many courses are there in SOI" "How many courses are there" "What course does Republic Polytechnic offer?"]
+concept:(intern) ["are there internships?" internship]t
+concept:(school) ["amount of schools" "How many schools are there" "How many schools are there in RP" schools]
 
 # Replying to speech
 u:(~hello) ~hello, Nice to meet you! How can I assist you today?
@@ -23,17 +27,17 @@ u: (What is your name)I am QiBot, a friendly virtual assistant here to help you.
 
 u: (What can you do)I can provide information, answer questions, and assist with various tasks. Just let me know what you need help with!
 
-u: (What is this course about) This course is Diploma in Digital Design and Development, within this course, you will learn how to code to create programs on various platform such as android and HTML for websites. Not just that but also design the UI/UX side of stuff as well.
+u: (~course) This course is Diploma in Digital Design and Development, within this course, you will learn how to code to create programs on various platform such as android and HTML for websites. Not just that but also design the UI/UX side of stuff as well.
 
-u: (What are the CCA available and how many are there) You may discover your interests and fully realise your potential with close to 100 co-curricular activities at RP to choose from. There is sports such as basketball, Football, Badminton. There are also school related club such as SOI club for our School of Infocomm. All the available CCA can be seen in the Republic Polytechnic Website under Co-Curricular Activities.
+u: (~cca) You may discover your interests and fully realise your potential with close to 100 co-curricular activities at RP to choose from. There is sports such as basketball, Football, Badminton. There are also school related club such as SOI club for our School of Infocomm. All the available CCA can be seen in the Republic Polytechnic Website under Co-Curricular Activities.
 
-u: (What programs does Republic Polytechnic offer?) We offer a wide range of diplomas such as this diploma Digital Design and Development, Infocomm Security, Financial Technology for School of Infocomm. For more information for other Schools in Republic Polytechinic, Please visit our website.
+u: (~offer) We offer a wide range of diplomas such as this diploma Digital Design and Development, Infocomm Security, Financial Technology for School of Infocomm. For more information for other Schools in Republic Polytechinic, Please visit our website.
 
 u: (What are the admission requirements?) The admission requirements is to have a O level certificate and you are able to admit to any course in Republic Polytechnic depending on your O level score.
 
-u: (Are there internships available?) Yes there are internships available. RP recently just started having overseas internships again after the pandemic.
+u: (~intern) Yes there are internships available. RP recently just started having overseas internships again after the pandemic.
 
-u: (How many schools are there in Republic Polytechnic) There a total of 7 schools, School of Applied Science, School of Engineering, School of Hospitality, School of Infocomm, School of Management and Communication, School of Sports and Leisure, School of Technology for the Arts.
+u: (~school) There a total of 7 schools, School of Applied Science, School of Engineering, School of Hospitality, School of Infocomm, School of Management and Communication, School of Sports and Leisure, School of Technology for the Arts.
 
 u:(e:Dialog/NotUnderstood) I don't understand
 
