@@ -137,6 +137,7 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
             // Execute the action.
             animate.run();
             say.run();
+            say.async().run();
 
             Touch touch = qiContext.getTouch();
 

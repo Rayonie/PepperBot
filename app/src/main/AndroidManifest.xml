@@ -25,7 +25,8 @@
     </activity>
         <activity
             android:name=".Camera"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.My4thRobotApplication.NoActionBar"/>
         <activity
             android:name=".intern.WebViewActivity"
             android:exported="false"

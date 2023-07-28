@@ -13,7 +13,6 @@ import com.aldebaran.qi.sdk.design.activity.RobotActivity;
 import com.aldebaran.qi.sdk.builder.SayBuilder;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.camera.TakePicture;
-import com.aldebaran.qi.sdk.object.conversation.Chat;
 import com.aldebaran.qi.sdk.object.conversation.Say;
 import com.aldebaran.qi.sdk.object.image.EncodedImage;
 import com.aldebaran.qi.sdk.object.image.EncodedImageHandle;
@@ -38,7 +37,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
     ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn;
     ImageView Cambtn;
     Button Askbtn;
-    private Chat chat;
+
     // The button used to start take picture action.
     private Button button;
     // An image view used to show the picture.
@@ -133,7 +132,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         // The robot focus is gained.
         // Create a new say action.
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("Hello human! how are you?") // Set the text to say.
+                .withText("Please touch my head gently to go back to main page.") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         // Create the second action.
@@ -149,24 +148,7 @@ public class MainActivity extends RobotActivity implements RobotLifecycleCallbac
         say.run();
         //animate.run();
 
-        //Topic topic = TopicBuilder.with(qiContext)
-        //        .withResource(R.raw.greetings)
-       //         .build();
 
-        //QiChatbot qiChatbot = QiChatbotBuilder.with(qiContext)
-        //        .withTopic(topic)
-        //        .build();
-
-       // chat = ChatBuilder.with(qiContext)
-        //        .withChatbot(qiChatbot)
-         //       .build();
-        //chat.addOnStartedListener(()-> Log.i(TAG,"Discussion Started."));
-        //Future<Void> chatFuture = chat.async().run();
-        //chatFuture.thenConsume(future -> {
-        //    if (future.hasError()) {
-        //        Log.e(TAG, "Discussion finished with error.", future.getError());
-        //    }
-        //});
     }
 
     @Override
