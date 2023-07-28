@@ -129,7 +129,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(CareerActivityUIDesigner.this,
-                        MainActivity.class);
+                        CareerActivitySystemAnalyst.class);
                 startActivity(i);
             }
         });
