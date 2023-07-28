@@ -175,10 +175,7 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
 
     @Override
     public void onRobotFocusLost() {
-        // The robot focus is lost.
-//        if(chat!=null){
-//            chat.removeAllOnStartedListeners();
-//        }
+
     }
 
     @Override
