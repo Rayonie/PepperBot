@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.RectShape;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -99,12 +100,12 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
             }
         }, startDelay);
 
-//        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//            @Override
-//            public void onPrepared(MediaPlayer mediaPlayer) {
-//                mediaPlayer.setLooping(false);
-//            }
-//        });
+        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.setLooping(false);
+            }
+        });
 
 
         career_ux.setOnClickListener(new View.OnClickListener() {
@@ -169,13 +170,9 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
     @Override
     public void onRobotFocusGained(QiContext qiContext) {
 
-        Say say1 = SayBuilder.with(qiContext) // Create the builder with the context.
+        Say say = SayBuilder.with(qiContext) // Create the builder with the context.
                 .withText("vrrrrrroooooooooommm! We have arrived at the career opportunities! Oh look! we have landed in career of UI Designer!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
-
-        Say say2 = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("hmmmmmmmmmmmm please be gentle when you touch me.") // Set the text to say.
-                .build();
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
                 .withResources(R.raw.wolf_a001)
@@ -185,7 +182,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
                 .build();
 
         animate.run();
-        say1.run();
+        say.run();
 
         // Get the Touch service from the QiContext.
         Touch touch = qiContext.getTouch();
