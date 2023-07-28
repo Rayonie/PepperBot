@@ -101,12 +101,12 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
             }
         }, startDelay);
 
-        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mediaPlayer) {
-                mediaPlayer.setLooping(false);
-            }
-        });
+//        career_vv1.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//            @Override
+//            public void onPrepared(MediaPlayer mediaPlayer) {
+//                mediaPlayer.setLooping(false);
+//            }
+//        });
 
 
         career_ux.setOnClickListener(new View.OnClickListener() {

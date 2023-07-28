@@ -35,7 +35,8 @@ import java.nio.ByteBuffer;
 public class MainActivity extends RobotActivity implements RobotLifecycleCallbacks {
 
 
-    ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn, Cambtn;
+    ImageButton Coursebtn,Careerbtn, Gamebtn , Internbtn;
+    ImageView Cambtn;
     Button Askbtn;
     private Chat chat;
     // The button used to start take picture action.
