@@ -1,5 +1,8 @@
 package com.example.my4throbotapplication;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 //import com.aldebaran.qi.sdk;
@@ -13,6 +16,8 @@ import com.aldebaran.qi.sdk.design.activity.RobotActivity;
 import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.conversation.Say;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
@@ -20,6 +25,7 @@ import com.denzcoskun.imageslider.models.SlideModel;
 import androidx.annotation.NonNull;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,6 +46,7 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
 
     private QiContext qiContext;
 
+    private TouchSensor headTouchSensor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +91,18 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
         // Execute the action.
         say.run();
         animate.run();
+        Touch touch = qiContext.getTouch();
 
+        // Get the head touch sensor.
+        headTouchSensor = touch.getSensor("Head/Touch");
+
+        // Add onStateChanged listener.
+        headTouchSensor.addOnStateChangedListener(touchState -> {
+            Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+            Intent i = new Intent(CourseActivity.this,
+                    MainActivity.class);
+            startActivity(i);
+        });
     }
 
     @Override
