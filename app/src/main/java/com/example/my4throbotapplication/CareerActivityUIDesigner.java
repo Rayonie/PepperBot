@@ -210,10 +210,6 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
 //        if(chat!=null){
 //            chat.removeAllOnStartedListeners();
 //        }
-        // Remove onStateChanged listeners.
-        if (headTouchSensor != null) {
-            headTouchSensor.removeAllOnStateChangedListeners();
-        }
     }
 
     @Override
