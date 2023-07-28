@@ -1,5 +1,7 @@
 package com.example.my4throbotapplication;
 
+import static android.content.ContentValues.TAG;
+
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,6 +11,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -25,12 +28,15 @@ import com.aldebaran.qi.sdk.builder.SayBuilder;
 import com.aldebaran.qi.sdk.object.actuation.Animate;
 import com.aldebaran.qi.sdk.object.actuation.Animation;
 import com.aldebaran.qi.sdk.object.conversation.Say;
+import com.aldebaran.qi.sdk.object.touch.Touch;
+import com.aldebaran.qi.sdk.object.touch.TouchSensor;
 
 public class CareerActivityUXDesigner extends CareerActivityUIDesigner implements RobotLifecycleCallbacks {
 
     ImageView career_ui, career_ux, career_develop, career_analyst;
     TextView tvuxdescripition;
 
+    private TouchSensor headTouchSensor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,6 +159,18 @@ public class CareerActivityUXDesigner extends CareerActivityUIDesigner implement
         say.run();
         animate.run();
 
+        Touch touch = qiContext.getTouch();
+
+        // Get the head touch sensor.
+        headTouchSensor = touch.getSensor("Head/Touch");
+
+        // Add onStateChanged listener.
+        headTouchSensor.addOnStateChangedListener(touchState -> {
+            Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
+            Intent i = new Intent(CareerActivityUXDesigner.this,
+                    MainActivity.class);
+            startActivity(i);
+        });
     }
 
     @Override

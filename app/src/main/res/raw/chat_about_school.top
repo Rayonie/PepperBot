@@ -6,7 +6,7 @@ concept:(bye) [goodbye bye later]
 concept:(cca) [cca CCA "What are the CCA?" "What CCA do they offer?" "how many CCA" "What are the CCA available"]
 concept:(course) ["What is this course about" course "What is Digital design and Development" ]
 concept:(offer) [courses "How many courses are there in SOI" "How many courses are there" "What course does Republic Polytechnic offer?"]
-concept:(intern) ["are there internships?" internship]t
+concept:(intern) ["are there internships?" internship]
 concept:(school) ["amount of schools" "How many schools are there" "How many schools are there in RP" schools]
 
 # Replying to speech
