@@ -197,7 +197,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
         headTouchSensor.addOnStateChangedListener(touchState -> {
             Log.i(TAG, "Sensor " + (touchState.getTouched() ? "touched" : "released") + " at " + touchState.getTime());
             Intent i = new Intent(CareerActivityUIDesigner.this,
-                    CareerActivitySystemAnalyst.class);
+                    MainActivity.class);
             startActivity(i);
         });
 
