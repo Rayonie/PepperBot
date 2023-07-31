@@ -39,21 +39,21 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="470dp"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="350dp"
                 android:text="What can you do?"
                 android:textColor="@color/orange"
-                android:textSize="30sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="247dp"
                 android:layout_height="125dp"
-                android:layout_marginLeft="850dp"
-                android:layout_marginTop="400dp"
+                android:layout_marginLeft="680dp"
+                android:layout_marginTop="350dp"
                 android:text="How many schools are there?"
                 android:textColor="@color/orange"
-                android:textSize="30sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -73,19 +73,10 @@
                 app:srcCompat="@drawable/bubble" />
 
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="437dp"
-                android:layout_height="258dp"
-                android:layout_marginLeft="800dp"
-                android:layout_marginTop="400dp"
-                app:srcCompat="@drawable/bubble" />
-
-            <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="490dp"
-                android:layout_height="308dp"
-                android:layout_marginLeft="-70dp"
-                android:layout_marginTop="400dp"
+                android:layout_width="313dp"
+                android:layout_height="175dp"
+                android:layout_marginTop="300dp"
                 app:srcCompat="@drawable/bubble" />
 
             <ImageView
@@ -97,14 +88,23 @@
                 app:srcCompat="@drawable/bubble" />
 
             <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="357dp"
+                android:layout_height="198dp"
+                android:layout_marginLeft="600dp"
+                android:layout_marginTop="300dp"
+                app:srcCompat="@drawable/bubble" />
+
+            <ImageView
                 android:id="@+id/imageView13"
-                android:layout_width="560dp"
-                android:layout_height="475dp"
-                android:layout_alignParentTop="true"
+                android:layout_width="701dp"
+                android:layout_height="517dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="200dp"
+                android:layout_marginStart="280dp"
+                android:layout_marginEnd="299dp"
+                android:layout_marginBottom="51dp"
                 android:translationY="100dp"
                 app:srcCompat="@drawable/pepper_8" />
 
