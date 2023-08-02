@@ -27,6 +27,8 @@ import java.util.TimerTask;
 
 public class LandingPageActivity extends AppCompatActivity implements RobotLifecycleCallbacks {
 
+    private MediaPlayer mediaPlayer;
+
     Timer timer;
 
     VideoView landing_vv;
@@ -38,6 +40,22 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
         landing_vv = findViewById(R.id.landingvideoView);
         QiSDK.register(this, this);
 
+        // Initialize MediaPlayer
+        mediaPlayer = MediaPlayer.create(this, R.raw.rocketsound);
+
+        // Set an event listener for when the audio finishes playing
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                // Release resources after audio finishes playing
+                mediaPlayer.release();
+            }
+        });
+
+        // Start playing the audio automatically
+        mediaPlayer.start();
+
+
         timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -48,18 +66,26 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
             }
         }, 5000);
 
+
+
         String path = "android.resource://com.example.my4throbotapplication/"+R.raw.main;
         Uri u = Uri.parse(path);
         landing_vv.setVideoURI(u);
         landing_vv.start();
+
+
 
         landing_vv.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mediaPlayer.setLooping(false);
             }
+
         });
+
+
     }
+
 
 
     @Override
@@ -85,6 +111,11 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
     protected void onDestroy() {
         landing_vv.stopPlayback();
         super.onDestroy();
+        // Release resources when the activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 
     @Override

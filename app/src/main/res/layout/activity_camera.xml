@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Camera"
-    android:background="@drawable/spacecatoonbg">
+    android:background="@drawable/cambg">
 
 
     <Button
