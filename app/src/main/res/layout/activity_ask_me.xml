@@ -13,12 +13,13 @@
 
         <ImageView
             android:id="@+id/imageView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="0dp"
             android:scaleX="1.5"
-            app:srcCompat="@drawable/c_greenbg" />
+            app:srcCompat="@drawable/ic_bg" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,37 +33,7 @@
                 android:layout_marginStart="100dp"
                 android:layout_marginTop="100dp"
                 android:text="CCA?"
-                android:textColor="@color/orange"
-                android:textSize="40sp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:layout_marginTop="350dp"
-                android:text="What can you do?"
-                android:textColor="@color/orange"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="247dp"
-                android:layout_height="125dp"
-                android:layout_marginLeft="680dp"
-                android:layout_marginTop="350dp"
-                android:text="How many schools are there?"
-                android:textColor="@color/orange"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="310dp"
-                android:layout_height="198dp"
-                android:layout_marginLeft="700dp"
-                android:layout_marginTop="100dp"
-                android:text="Courses?"
-                android:textColor="@color/orange"
+                android:textColor="@color/white"
                 android:textSize="40sp" />
 
             <ImageView
@@ -72,12 +43,32 @@
                 android:layout_marginTop="50dp"
                 app:srcCompat="@drawable/bubble" />
 
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginTop="350dp"
+                android:text="What can you do?"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="313dp"
                 android:layout_height="175dp"
                 android:layout_marginTop="300dp"
                 app:srcCompat="@drawable/bubble" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="310dp"
+                android:layout_height="198dp"
+                android:layout_marginLeft="700dp"
+                android:layout_marginTop="100dp"
+                android:text="Courses?"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -86,6 +77,16 @@
                 android:layout_marginLeft="600dp"
                 android:layout_marginTop="50dp"
                 app:srcCompat="@drawable/bubble" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="247dp"
+                android:layout_height="125dp"
+                android:layout_marginLeft="680dp"
+                android:layout_marginTop="350dp"
+                android:text="How many schools are there?"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/imageView3"

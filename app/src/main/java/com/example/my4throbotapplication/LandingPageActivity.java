@@ -29,6 +29,7 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
 
     private MediaPlayer mediaPlayer;
 
+    private float volume = 1.0f; // 1.0f is the default maximum volume (full volume)
     Timer timer;
 
     VideoView landing_vv;
@@ -39,6 +40,18 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
         setContentView(R.layout.activity_landing_page);
         landing_vv = findViewById(R.id.landingvideoView);
         QiSDK.register(this, this);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.rocketsound);
+        mediaPlayer.setVolume(volume, volume); // Set initial volume for both left and right channels
+
+        // Set an event listener for when the audio finishes playing
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                // Release resources after audio finishes playing
+                mediaPlayer.release();
+            }
+        });
 
         // Initialize MediaPlayer
         mediaPlayer = MediaPlayer.create(this, R.raw.rocketsound);
@@ -122,7 +135,7 @@ public class LandingPageActivity extends AppCompatActivity implements RobotLifec
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say1 = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("vrrrrrroooooooooommm!Welcome aboard fellow astronauts! Let's go an adventure shall we?") // Set the text to say.
+                .withText("Welcome aboard fellow astronauts! Let's go an adventure shall we?") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
