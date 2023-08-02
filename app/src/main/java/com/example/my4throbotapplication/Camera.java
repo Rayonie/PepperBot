@@ -113,6 +113,22 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
 
         @Override
         public void onRobotFocusGained(QiContext qiContext) {
+            Say say = SayBuilder.with(qiContext) // Create the builder with the context.
+                    .withText("Say cheese!") // Set the text to say.
+                    .build(); // Build the say action.// Create a new say action.
+
+            // Create the second action.
+            // Create an animation object.
+            Animation myAnimation = AnimationBuilder.with(qiContext)
+                    .withResources(R.raw.take_pic_b002)
+                    .build();
+            Animate animate = AnimateBuilder.with(qiContext)
+                    .withAnimation(myAnimation)
+                    .build();
+
+            // Execute the action.
+            say.run();
+            animate.async().run();
             // Build the action and store it in the class variable.
             takePictureFuture = TakePictureBuilder.with(qiContext).buildAsync();
 
@@ -121,23 +137,7 @@ public class Camera extends AppCompatActivity implements RobotLifecycleCallbacks
 
             // The robot focus is gained.
             // Create a new say action.
-            Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                    .withText("Say cheese!") // Set the text to say.
-                    .build(); // Build the say action.// Create a new say action.
 
-            // Create the second action.
-            // Create an animation object.
-            Animation myAnimation = AnimationBuilder.with(qiContext)
-                    .withResources(R.raw.exclamation_both_hands_a007)
-                    .build();
-            Animate animate = AnimateBuilder.with(qiContext)
-                    .withAnimation(myAnimation)
-                    .build();
-
-            // Execute the action.
-            animate.run();
-            say.run();
-            say.async().run();
 
             Touch touch = qiContext.getTouch();
 
