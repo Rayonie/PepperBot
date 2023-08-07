@@ -88,6 +88,8 @@ public class CourseActivity extends AppCompatActivity implements RobotLifecycleC
                 .withAnimation(myAnimation)
                 .build();
 
+
+
         // Execute the action.
         say.run();
         animate.run();

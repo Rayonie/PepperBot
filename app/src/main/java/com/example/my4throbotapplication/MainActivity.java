@@ -1,35 +1,24 @@
 package com.example.my4throbotapplication;
 
 //import com.aldebaran.qi.sdk;
-import static android.content.ContentValues.TAG;
-
-import com.aldebaran.qi.Future;
-import com.aldebaran.qi.sdk.QiSDK;
-import com.aldebaran.qi.sdk.QiContext;
-import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
-import com.aldebaran.qi.sdk.builder.AnimationBuilder;
-import com.aldebaran.qi.sdk.builder.TakePictureBuilder;
-import com.aldebaran.qi.sdk.design.activity.RobotActivity;
-import com.aldebaran.qi.sdk.builder.SayBuilder;
-import com.aldebaran.qi.sdk.object.actuation.Animation;
-import com.aldebaran.qi.sdk.object.camera.TakePicture;
-import com.aldebaran.qi.sdk.object.conversation.Say;
-import com.aldebaran.qi.sdk.object.image.EncodedImage;
-import com.aldebaran.qi.sdk.object.image.EncodedImageHandle;
-import com.aldebaran.qi.sdk.object.image.TimestampedImageHandle;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import java.nio.ByteBuffer;
+import com.aldebaran.qi.sdk.QiContext;
+import com.aldebaran.qi.sdk.QiSDK;
+import com.aldebaran.qi.sdk.RobotLifecycleCallbacks;
+import com.aldebaran.qi.sdk.builder.AnimationBuilder;
+import com.aldebaran.qi.sdk.builder.SayBuilder;
+import com.aldebaran.qi.sdk.design.activity.RobotActivity;
+import com.aldebaran.qi.sdk.object.actuation.Animation;
+import com.aldebaran.qi.sdk.object.conversation.Say;
+
 
 public class MainActivity extends RobotActivity implements RobotLifecycleCallbacks {
 

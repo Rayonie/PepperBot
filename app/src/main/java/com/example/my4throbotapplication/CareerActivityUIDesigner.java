@@ -171,7 +171,7 @@ public class CareerActivityUIDesigner extends AppCompatActivity implements Robot
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("vrrrrrroooooooooommm! We have arrived at the career opportunities! Oh look! we have landed in career of UI Designer!") // Set the text to say.
+                .withText("We have arrived at the career opportunities! Oh look! we have landed in career of UI Designer!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)

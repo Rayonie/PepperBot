@@ -147,7 +147,7 @@ public class CareerActivitySystemAnalyst extends CareerActivityUIDesigner implem
     public void onRobotFocusGained(QiContext qiContext) {
 
         Say say = SayBuilder.with(qiContext) // Create the builder with the context.
-                .withText("wvooooouuuuuuuuuuuuuuuuu! Here, we can learn about being a System Analyst!") // Set the text to say.
+                .withText("Here, we can learn about being a System Analyst!") // Set the text to say.
                 .build(); // Build the say action.// Create a new say action.
 
         Animation myAnimation = AnimationBuilder.with(qiContext)
